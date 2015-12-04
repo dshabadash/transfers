@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PBCommonUploadToViewController">
+            <connections>
+                <outlet property="activityIndicator" destination="fl2-e3-Gyt" id="2q8-Fh-ewk"/>
+                <outlet property="contentContainerView" destination="2af-kk-q15" id="6In-R8-2V0"/>
+                <outlet property="copLinkButton" destination="6GG-zI-Ayy" id="1Uf-FN-vQ9"/>
+                <outlet property="doneButton" destination="OxI-a1-tQk" id="G7k-KZ-xfI"/>
+                <outlet property="eMailButton" destination="itd-dR-O8j" id="Qg7-Jg-tkm"/>
+                <outlet property="finishedContentContainerView" destination="poN-tO-5us" id="RwG-pL-HNf"/>
+                <outlet property="finishedImageView" destination="D5A-Vk-S3j" id="8wH-bu-PDq"/>
+                <outlet property="iMessageButton" destination="g1V-hV-NDn" id="0Vp-XR-6CF"/>
+                <outlet property="importingActivityIndicatorView" destination="3oi-Cm-PvU" id="BPw-yA-NgE"/>
+                <outlet property="messageLabel" destination="4g9-df-7bT" id="cdk-2S-bLB"/>
+                <outlet property="okButton" destination="eR4-21-De2" id="k6S-CO-ys5"/>
+                <outlet property="progressIndicator" destination="Rz9-pj-zZU" id="fY5-Qd-b4H"/>
+                <outlet property="receiveImageV" destination="wcp-Ld-p5R" id="HWp-lm-ViL"/>
+                <outlet property="sendToLabel" destination="0eP-AZ-YJa" id="1Eu-ni-fHk"/>
+                <outlet property="titleLable" destination="dze-ZA-xBm" id="rqf-tc-418"/>
+                <outlet property="transferAnimationImageView" destination="5jD-rT-4jr" id="4kv-90-Zk3"/>
+                <outlet property="transferCanceledImageView" destination="SQo-Zy-D68" id="E3z-ih-ru8"/>
+                <outlet property="transferringLabel" destination="lTd-yB-gx9" id="QXO-vR-8GG"/>
+                <outlet property="view" destination="zPJ-Yg-gaK" id="bEY-t0-ZAg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="zPJ-Yg-gaK">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" verticalHuggingPriority="247" translatesAutoresizingMaskIntoConstraints="NO" id="2af-kk-q15" userLabel="View - Progress">
+                    <rect key="frame" x="0.0" y="100" width="320" height="292"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="center" image="receive_screen_mac_or_pc_selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="wcp-Ld-p5R">
+                            <rect key="frame" x="186" y="5" width="83" height="81"/>
+                            <animations/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="center" image="receive_screen_iphone_selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="ucn-QY-Cq3">
+                            <rect key="frame" x="37" y="5" width="83" height="81"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="83" id="YLc-N2-e6h"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="246" text="Dropbox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eP-AZ-YJa">
+                            <rect key="frame" x="152" y="91" width="151" height="24"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="iPhone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INY-HY-9Rp">
+                            <rect key="frame" x="37" y="94" width="83" height="21"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rz9-pj-zZU" customClass="PBProgressIndicator">
+                            <rect key="frame" x="35" y="146" width="250" height="17"/>
+                            <animations/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fl2-e3-Gyt">
+                            <rect key="frame" x="151" y="145" width="20" height="20"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="RkD-DL-iSm"/>
+                            </constraints>
+                        </activityIndicatorView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="265" translatesAutoresizingMaskIntoConstraints="NO" id="lTd-yB-gx9" userLabel="Transferring photos to Dropbox. This might take up to few minutes.">
+                            <rect key="frame" x="8" y="180" width="304" height="41"/>
+                            <animations/>
+                            <string key="text">Transferring photos to Dropbox.
+This might take up to few minutes.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5jD-rT-4jr">
+                            <rect key="frame" x="137" y="23" width="24" height="43"/>
+                            <animations/>
+                        </imageView>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="5jD-rT-4jr" firstAttribute="leading" secondItem="ucn-QY-Cq3" secondAttribute="trailing" constant="17" id="4g3-gw-cEV"/>
+                        <constraint firstItem="INY-HY-9Rp" firstAttribute="trailing" secondItem="ucn-QY-Cq3" secondAttribute="trailing" id="7el-uG-4D3"/>
+                        <constraint firstAttribute="bottom" secondItem="lTd-yB-gx9" secondAttribute="bottom" constant="71" id="EIz-Sc-5dr"/>
+                        <constraint firstItem="ucn-QY-Cq3" firstAttribute="top" secondItem="2af-kk-q15" secondAttribute="top" constant="5" id="Ec9-a5-Zzt"/>
+                        <constraint firstItem="Rz9-pj-zZU" firstAttribute="leading" secondItem="2af-kk-q15" secondAttribute="leading" constant="35" id="ICO-IN-nDQ"/>
+                        <constraint firstItem="INY-HY-9Rp" firstAttribute="top" secondItem="ucn-QY-Cq3" secondAttribute="bottom" constant="8" symbolic="YES" id="JyG-0O-QTv"/>
+                        <constraint firstItem="Rz9-pj-zZU" firstAttribute="top" secondItem="INY-HY-9Rp" secondAttribute="bottom" constant="31" id="KHK-nU-0FA"/>
+                        <constraint firstItem="0eP-AZ-YJa" firstAttribute="top" secondItem="5jD-rT-4jr" secondAttribute="bottom" constant="25" id="KdS-GK-abY"/>
+                        <constraint firstItem="lTd-yB-gx9" firstAttribute="trailing" secondItem="2af-kk-q15" secondAttribute="trailingMargin" id="L5A-u6-bbo"/>
+                        <constraint firstItem="5jD-rT-4jr" firstAttribute="top" secondItem="2af-kk-q15" secondAttribute="top" constant="23" id="Lzp-ZS-9j9"/>
+                        <constraint firstItem="lTd-yB-gx9" firstAttribute="leading" secondItem="2af-kk-q15" secondAttribute="leadingMargin" id="NTA-Dn-dEx"/>
+                        <constraint firstItem="0eP-AZ-YJa" firstAttribute="top" secondItem="wcp-Ld-p5R" secondAttribute="bottom" constant="5" id="Nha-c7-Fz3"/>
+                        <constraint firstItem="lTd-yB-gx9" firstAttribute="top" secondItem="fl2-e3-Gyt" secondAttribute="bottom" constant="15" id="Ooz-Dn-REU"/>
+                        <constraint firstItem="INY-HY-9Rp" firstAttribute="baseline" secondItem="0eP-AZ-YJa" secondAttribute="baseline" id="Qm6-Ox-1Ga"/>
+                        <constraint firstItem="wcp-Ld-p5R" firstAttribute="bottom" secondItem="ucn-QY-Cq3" secondAttribute="bottom" id="QnH-cZ-YsN"/>
+                        <constraint firstItem="INY-HY-9Rp" firstAttribute="leading" secondItem="ucn-QY-Cq3" secondAttribute="leading" id="SdU-6W-kKE"/>
+                        <constraint firstItem="0eP-AZ-YJa" firstAttribute="centerX" secondItem="wcp-Ld-p5R" secondAttribute="centerX" id="Uym-IX-v7T"/>
+                        <constraint firstItem="lTd-yB-gx9" firstAttribute="centerX" secondItem="Rz9-pj-zZU" secondAttribute="centerX" id="adZ-hW-mic"/>
+                        <constraint firstAttribute="trailing" secondItem="0eP-AZ-YJa" secondAttribute="trailing" constant="17" id="b5u-XW-Q9b"/>
+                        <constraint firstItem="fl2-e3-Gyt" firstAttribute="leading" secondItem="2af-kk-q15" secondAttribute="leading" constant="151" id="bGE-M8-AOp"/>
+                        <constraint firstItem="ucn-QY-Cq3" firstAttribute="top" secondItem="wcp-Ld-p5R" secondAttribute="top" id="bzc-uj-Ihl"/>
+                        <constraint firstItem="0eP-AZ-YJa" firstAttribute="leading" secondItem="INY-HY-9Rp" secondAttribute="trailing" constant="32" id="eJJ-Kg-rS0"/>
+                        <constraint firstItem="wcp-Ld-p5R" firstAttribute="leading" secondItem="5jD-rT-4jr" secondAttribute="trailing" constant="25" id="gkv-rf-xPE"/>
+                        <constraint firstItem="ucn-QY-Cq3" firstAttribute="leading" secondItem="2af-kk-q15" secondAttribute="leading" constant="37" id="i05-NC-Z9X"/>
+                        <constraint firstItem="lTd-yB-gx9" firstAttribute="top" secondItem="Rz9-pj-zZU" secondAttribute="bottom" constant="17" id="oi7-vs-MAq"/>
+                        <constraint firstItem="fl2-e3-Gyt" firstAttribute="top" secondItem="0eP-AZ-YJa" secondAttribute="bottom" constant="30" id="yUK-6h-n3u"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="poN-tO-5us" userLabel="View - Finished">
+                    <rect key="frame" x="0.0" y="48" width="320" height="361"/>
+                    <subviews>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1V-hV-NDn" userLabel="iMessageButton" customClass="PBStretchableBackgroundButton">
+                            <rect key="frame" x="20" y="276" width="280" height="40"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <size key="titleShadowOffset" width="0.0" height="1"/>
+                            <state key="normal" title="Send iMessage" backgroundImage="button_cancel.png">
+                                <color key="titleColor" red="0.38823533059999998" green="0.36862745879999997" blue="0.34509804840000002" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="iMessageTapped:" destination="-1" eventType="touchUpInside" id="8dC-Eg-WoR"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="transfer_smile_iphone_tongue.png" translatesAutoresizingMaskIntoConstraints="NO" id="D5A-Vk-S3j">
+                            <rect key="frame" x="93" y="0.0" width="135" height="135"/>
+                            <animations/>
+                        </imageView>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3oi-Cm-PvU">
+                            <rect key="frame" x="150" y="228" width="20" height="20"/>
+                            <animations/>
+                        </activityIndicatorView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Photos were successfully sent to Dropbox. You can share link to uploaded folder." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="265" translatesAutoresizingMaskIntoConstraints="NO" id="4g9-df-7bT" customClass="TTTAttributedLabel">
+                            <rect key="frame" x="8" y="143" width="304" height="85"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="85" id="yMH-SQ-acR"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itd-dR-O8j" userLabel="eMailButton" customClass="PBStretchableBackgroundButton">
+                            <rect key="frame" x="20" y="324" width="280" height="40"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="CIF-Tj-az9"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <size key="titleShadowOffset" width="0.0" height="1"/>
+                            <state key="normal" title="Send e-mail" backgroundImage="button_cancel.png">
+                                <color key="titleColor" red="0.38823533059999998" green="0.36862745879999997" blue="0.34509804840000002" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="emailButtonTapped:" destination="-1" eventType="touchUpInside" id="eMp-Hf-rAJ"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GG-zI-Ayy" userLabel="linkCopyButton" customClass="PBStretchableBackgroundButton">
+                            <rect key="frame" x="20" y="228" width="280" height="40"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="194" id="sd0-Rx-XdB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <size key="titleShadowOffset" width="0.0" height="1"/>
+                            <state key="normal" title="Copy to Clipboard" backgroundImage="button_cancel.png">
+                                <color key="titleColor" red="0.38823533059999998" green="0.36862745879999997" blue="0.34509804840000002" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="sd0-Rx-XdB"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <action selector="copyLinkTappde:" destination="-1" eventType="touchUpInside" id="EkO-1z-SIl"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="center" image="no_wifi_acces_screen.png" translatesAutoresizingMaskIntoConstraints="NO" id="SQo-Zy-D68">
+                            <rect key="frame" x="126" y="-55" width="128" height="190"/>
+                            <animations/>
+                        </imageView>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="g1V-hV-NDn" firstAttribute="leading" secondItem="itd-dR-O8j" secondAttribute="leading" id="3DV-Oa-YPp"/>
+                        <constraint firstItem="g1V-hV-NDn" firstAttribute="top" secondItem="3oi-Cm-PvU" secondAttribute="bottom" constant="28" id="5IP-QY-OMU"/>
+                        <constraint firstItem="6GG-zI-Ayy" firstAttribute="leading" secondItem="poN-tO-5us" secondAttribute="leading" constant="20" id="8xh-sK-BYB"/>
+                        <constraint firstItem="4g9-df-7bT" firstAttribute="leading" secondItem="poN-tO-5us" secondAttribute="leadingMargin" id="9Lc-cC-l1v"/>
+                        <constraint firstItem="4g9-df-7bT" firstAttribute="trailing" secondItem="poN-tO-5us" secondAttribute="trailingMargin" id="9vr-jh-3Jv"/>
+                        <constraint firstItem="itd-dR-O8j" firstAttribute="top" secondItem="g1V-hV-NDn" secondAttribute="bottom" constant="8" symbolic="YES" id="GMJ-An-2mw"/>
+                        <constraint firstItem="6GG-zI-Ayy" firstAttribute="top" secondItem="4g9-df-7bT" secondAttribute="bottom" id="LI2-iW-WuT"/>
+                        <constraint firstItem="6GG-zI-Ayy" firstAttribute="centerX" secondItem="3oi-Cm-PvU" secondAttribute="centerX" id="Tab-I3-Cc2"/>
+                        <constraint firstItem="g1V-hV-NDn" firstAttribute="trailing" secondItem="6GG-zI-Ayy" secondAttribute="trailing" id="TiT-7d-s1f"/>
+                        <constraint firstItem="6GG-zI-Ayy" firstAttribute="top" secondItem="3oi-Cm-PvU" secondAttribute="top" id="ToY-WA-KN2"/>
+                        <constraint firstItem="SQo-Zy-D68" firstAttribute="top" secondItem="poN-tO-5us" secondAttribute="top" constant="-55" id="WJl-HB-UIy"/>
+                        <constraint firstItem="D5A-Vk-S3j" firstAttribute="top" secondItem="poN-tO-5us" secondAttribute="top" id="X18-H9-jbs"/>
+                        <constraint firstItem="3oi-Cm-PvU" firstAttribute="centerX" secondItem="4g9-df-7bT" secondAttribute="centerX" id="XBq-16-UpP"/>
+                        <constraint firstAttribute="bottom" secondItem="itd-dR-O8j" secondAttribute="bottom" constant="-3" id="art-rO-lxG"/>
+                        <constraint firstAttribute="trailing" secondItem="SQo-Zy-D68" secondAttribute="trailing" constant="66" id="bV4-1R-JAu"/>
+                        <constraint firstItem="g1V-hV-NDn" firstAttribute="top" secondItem="6GG-zI-Ayy" secondAttribute="bottom" constant="8" symbolic="YES" id="btD-VM-qk9"/>
+                        <constraint firstItem="6GG-zI-Ayy" firstAttribute="leading" secondItem="g1V-hV-NDn" secondAttribute="leading" id="dKx-vN-bhP"/>
+                        <constraint firstItem="itd-dR-O8j" firstAttribute="trailing" secondItem="g1V-hV-NDn" secondAttribute="trailing" id="e2y-eh-QvR"/>
+                        <constraint firstItem="4g9-df-7bT" firstAttribute="top" secondItem="D5A-Vk-S3j" secondAttribute="bottom" constant="8" symbolic="YES" id="iB3-NN-pHl"/>
+                        <constraint firstItem="D5A-Vk-S3j" firstAttribute="centerX" secondItem="4g9-df-7bT" secondAttribute="centerX" id="w8X-mi-FlI"/>
+                        <constraint firstItem="D5A-Vk-S3j" firstAttribute="leading" secondItem="poN-tO-5us" secondAttribute="leading" constant="93" id="xDW-WC-IJa"/>
+                        <constraint firstItem="4g9-df-7bT" firstAttribute="top" secondItem="SQo-Zy-D68" secondAttribute="bottom" constant="8" symbolic="YES" id="zs8-sF-H5a"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eR4-21-De2" userLabel="CancelButton" customClass="PBStretchableBackgroundButton">
+                    <rect key="frame" x="20" y="426" width="280" height="46"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <size key="titleShadowOffset" width="0.0" height="1"/>
+                    <state key="normal" title="Cancel" backgroundImage="button_cancel.png">
+                        <color key="titleColor" red="0.38823533059999998" green="0.36862745879999997" blue="0.34509804840000002" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="okButtonTapped:" destination="-1" eventType="touchUpInside" id="JMf-r2-V48"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxI-a1-tQk" userLabel="DoneButton" customClass="PBStretchableBackgroundButton">
+                    <rect key="frame" x="20" y="427" width="280" height="46"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <size key="titleShadowOffset" width="0.0" height="1"/>
+                    <state key="normal" title="Done" backgroundImage="button_cancel.png">
+                        <color key="titleColor" red="0.38823533059999998" green="0.36862745879999997" blue="0.34509804840000002" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="okButtonTapped:" destination="-1" eventType="touchUpInside" id="6gh-Er-EzI"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Sending Photos to Dropbox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dze-ZA-xBm">
+                    <rect key="frame" x="32" y="16" width="256" height="24"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" red="0.98039221759999995" green="0.95686280729999995" blue="0.92941182850000004" alpha="1" colorSpace="deviceRGB"/>
+            <constraints>
+                <constraint firstItem="eR4-21-De2" firstAttribute="top" secondItem="poN-tO-5us" secondAttribute="bottom" constant="17" id="0rs-Eo-uIM"/>
+                <constraint firstItem="eR4-21-De2" firstAttribute="leading" secondItem="zPJ-Yg-gaK" secondAttribute="leading" constant="20" id="2ww-oG-5iG"/>
+                <constraint firstItem="poN-tO-5us" firstAttribute="top" secondItem="dze-ZA-xBm" secondAttribute="bottom" constant="8" symbolic="YES" id="4W5-DQ-HWS"/>
+                <constraint firstItem="eR4-21-De2" firstAttribute="leading" secondItem="OxI-a1-tQk" secondAttribute="leading" id="7dJ-md-1Oh"/>
+                <constraint firstItem="2af-kk-q15" firstAttribute="centerX" secondItem="eR4-21-De2" secondAttribute="centerX" id="83L-PW-2NM"/>
+                <constraint firstItem="2af-kk-q15" firstAttribute="leading" secondItem="zPJ-Yg-gaK" secondAttribute="leading" id="8bx-GI-7bw"/>
+                <constraint firstAttribute="trailing" secondItem="2af-kk-q15" secondAttribute="trailing" id="9GV-CT-gST"/>
+                <constraint firstItem="2af-kk-q15" firstAttribute="centerX" secondItem="dze-ZA-xBm" secondAttribute="centerX" id="Mf2-ZM-PTU"/>
+                <constraint firstItem="OxI-a1-tQk" firstAttribute="top" secondItem="poN-tO-5us" secondAttribute="bottom" constant="18" id="Rdb-r8-ufp"/>
+                <constraint firstItem="eR4-21-De2" firstAttribute="bottom" secondItem="zPJ-Yg-gaK" secondAttribute="bottomMargin" id="ShA-tZ-cH8"/>
+                <constraint firstItem="dze-ZA-xBm" firstAttribute="top" secondItem="zPJ-Yg-gaK" secondAttribute="top" constant="16" id="U4R-pU-cLY"/>
+                <constraint firstItem="eR4-21-De2" firstAttribute="baseline" secondItem="OxI-a1-tQk" secondAttribute="baseline" id="Ynd-0q-Xil"/>
+                <constraint firstItem="2af-kk-q15" firstAttribute="top" secondItem="dze-ZA-xBm" secondAttribute="bottom" constant="60" id="eiD-G8-Rr5"/>
+                <constraint firstItem="2af-kk-q15" firstAttribute="trailing" secondItem="poN-tO-5us" secondAttribute="trailing" id="pJy-Nf-nfZ"/>
+                <constraint firstItem="eR4-21-De2" firstAttribute="top" secondItem="2af-kk-q15" secondAttribute="bottom" constant="34" id="thp-hu-fy3"/>
+                <constraint firstItem="poN-tO-5us" firstAttribute="leading" secondItem="2af-kk-q15" secondAttribute="leading" id="vL2-tn-Mie"/>
+                <constraint firstItem="OxI-a1-tQk" firstAttribute="trailing" secondItem="eR4-21-De2" secondAttribute="trailing" id="vWU-eC-Qfx"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="51" y="306"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="button_cancel.png" width="27" height="46"/>
+        <image name="no_wifi_acces_screen.png" width="128" height="190"/>
+        <image name="receive_screen_iphone_selected.png" width="45" height="81"/>
+        <image name="receive_screen_mac_or_pc_selected.png" width="83" height="81"/>
+        <image name="transfer_smile_iphone_tongue.png" width="81" height="144"/>
+    </resources>
+</document>

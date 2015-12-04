@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PBPurchaseViewController">
+            <connections>
+                <outlet property="activityIndicator" destination="10" id="21"/>
+                <outlet property="buyFullVersionButton" destination="15" id="22"/>
+                <outlet property="buyUnlimitedPhotosVersionButton" destination="19" id="23"/>
+                <outlet property="buyUnlimitedVideosVersionButton" destination="17" id="24"/>
+                <outlet property="continueButton" destination="5" id="25"/>
+                <outlet property="fullVersionPriceLabel" destination="14" id="26"/>
+                <outlet property="maxPhotosLabel" destination="3" id="27"/>
+                <outlet property="maxVideoDurationLabel" destination="37" id="38"/>
+                <outlet property="maxVideosLabel" destination="4" id="28"/>
+                <outlet property="messageLabel" destination="9" id="29"/>
+                <outlet property="proposalLabel" destination="8" id="30"/>
+                <outlet property="unlimitedPhotosPriceLabel" destination="18" id="31"/>
+                <outlet property="unlimitedVideosPriceLabel" destination="16" id="32"/>
+                <outlet property="view" destination="2" id="20"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4" userLabel="maxVideosLabel">
+            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+            <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="highlightedColor" red="0.87450980389999999" green="0.40784313729999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+        </label>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="20" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="upgrade-smile-device.png" id="7">
+                    <rect key="frame" x="23" y="50" width="44" height="81"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" text="Free version have limits" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8" userLabel="TitleLabel">
+                    <rect key="frame" x="86" y="49" width="218" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
+                    <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" text="Video Transfer allows you to  send up to    photos and one   " lineBreakMode="characterWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9" userLabel="ProposalMessage">
+                    <rect key="frame" x="86" y="74" width="218" height="58"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3" userLabel="maxPhotosLabel">
+                    <rect key="frame" x="144" y="92" width="42" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                    <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="highlightedColor" red="0.87450980389999999" green="0.40784313729999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="30 seconds long video" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="37" userLabel="maxVideoDurationLabel">
+                    <rect key="frame" x="86" y="111" width="218" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                    <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="highlightedColor" red="0.87450980389999999" green="0.40784313729999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                </label>
+                <view autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" id="6">
+                    <rect key="frame" x="0.0" y="209" width="320" height="359"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <view autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" id="11">
+                            <rect key="frame" x="14" y="0.0" width="142" height="162"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" adjustsImageWhenHighlighted="NO" lineBreakMode="characterWrap" id="19" userLabel="BuyUnlimitedPhotosButton" customClass="PBStretchableBackgroundButton">
+                                    <rect key="frame" x="0.0" y="0.0" width="142" height="162"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <inset key="titleEdgeInsets" minX="-10" minY="8" maxX="0.0" maxY="0.0"/>
+                                    <inset key="imageEdgeInsets" minX="46" minY="54" maxX="0.0" maxY="0.0"/>
+                                    <size key="titleShadowOffset" width="0.0" height="1"/>
+                                    <state key="normal" title="Unlimited   photos" image="upgrade-icon-photos.png" backgroundImage="upgrade_button-red-568h.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.0" alpha="0.40000000000000002" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="upgrade_button-red-pressed-568h.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.0" alpha="0.40000000000000002" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="buyUnlimitedPhotosVersionButtonTapped:" destination="-1" eventType="touchUpInside" id="34"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="18" userLabel="UnlimitedPhotosPriceLabel">
+                                    <rect key="frame" x="9" y="126" width="124" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="highlightedColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" id="12">
+                            <rect key="frame" x="163" y="0.0" width="142" height="162"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" adjustsImageWhenHighlighted="NO" lineBreakMode="characterWrap" id="17" userLabel="BuyUnlimitedVideosButton" customClass="PBStretchableBackgroundButton">
+                                    <rect key="frame" x="0.0" y="0.0" width="142" height="162"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                    <inset key="titleEdgeInsets" minX="-10" minY="8" maxX="0.0" maxY="0.0"/>
+                                    <inset key="imageEdgeInsets" minX="46" minY="53" maxX="0.0" maxY="0.0"/>
+                                    <size key="titleShadowOffset" width="0.0" height="1"/>
+                                    <state key="normal" title="Unlimited    videos" image="upgrade-icon-video.png" backgroundImage="upgrade_button-red-568h.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.0" alpha="0.40000000000000002" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="upgrade_button-red-pressed-568h.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.0" alpha="0.40000000000000002" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="buyUnlimitedVideosVersionButtonTapped:" destination="-1" eventType="touchUpInside" id="35"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="16" userLabel="UnlimitedVideosPriceLabel">
+                                    <rect key="frame" x="9" y="126" width="124" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="highlightedColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" id="13">
+                            <rect key="frame" x="14" y="181" width="290" height="62"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" adjustsImageWhenHighlighted="NO" lineBreakMode="characterWrap" id="15" userLabel="BuyFullVersionButton" customClass="PBStretchableBackgroundButton">
+                                    <rect key="frame" x="0.0" y="0.0" width="290" height="62"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                    <inset key="titleEdgeInsets" minX="28" minY="8" maxX="0.0" maxY="0.0"/>
+                                    <inset key="imageEdgeInsets" minX="14" minY="8" maxX="0.0" maxY="0.0"/>
+                                    <size key="titleShadowOffset" width="0.0" height="1"/>
+                                    <state key="normal" title="Unlimited photos      and videos" image="upgrade-icon-unlimited.png" backgroundImage="upgrade_button-divider.png">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.0" alpha="0.40000000000000002" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="upgrade_button-divider-pressed.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.0" alpha="0.40000000000000002" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="buyFullVersionButtonTapped:" destination="-1" eventType="touchUpInside" id="33"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="14" userLabel="FullVersionPriceLabel">
+                                    <rect key="frame" x="208" y="16" width="76" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="highlightedColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5" userLabel="LimitedTransferButton" customClass="PBStretchableBackgroundButton">
+                            <rect key="frame" x="15" y="284" width="290" height="48"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                            <state key="normal" title="Limited transfer" backgroundImage="cancel_button.png">
+                                <color key="titleColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="disabled">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.17999999999999999" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="1" alpha="0.57999999999999996" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" backgroundImage="cancel_button_pressed.png">
+                                <color key="titleColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="deviceRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="continueButtonTapped:" destination="-1" eventType="touchUpInside" id="36"/>
+                            </connections>
+                        </button>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="white" id="10">
+                            <rect key="frame" x="150" y="161" width="20" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.94901960780000005" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cancel_button.png" width="15" height="46"/>
+        <image name="cancel_button_pressed.png" width="15" height="46"/>
+        <image name="upgrade-icon-photos.png" width="47" height="48"/>
+        <image name="upgrade-icon-unlimited.png" width="43" height="32"/>
+        <image name="upgrade-icon-video.png" width="47" height="48"/>
+        <image name="upgrade-smile-device.png" width="44" height="81"/>
+        <image name="upgrade_button-divider-pressed.png" width="182" height="61"/>
+        <image name="upgrade_button-divider.png" width="290" height="60"/>
+        <image name="upgrade_button-red-568h.png" width="284" height="324"/>
+        <image name="upgrade_button-red-pressed-568h.png" width="284" height="324"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

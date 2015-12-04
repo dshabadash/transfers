@@ -1,0 +1,106 @@
+//
+// Prefix header for all source files of the 'PhotoBox' target in the 'PhotoBox' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "PSTCollectionView.h"
+    #import "PSTCollectionViewFlowLayout.h"
+
+    #import "PBUtils.h"
+    #import "PBAppDelegate.h"
+    #import "Constants.h"
+
+    #import "PBActionSheet.h"
+    #import "PBAlertView.h"
+
+    #import "PBViewController.h"
+    #import "PBStretchableImageView.h"
+
+    #import "NSObject+PB.h"
+    #import "NSBundle+CB.h"
+    #import "UIColor+CB.h"
+    #import "UILabel+CB.h"
+    #import "NSString+CB.h"
+    #import "UIView+CB.h"
+    #import "NSData+CB.h"
+    #import "UIImage+CB.h"
+
+
+    #import "PBRootViewController.h"
+    #import "CBAnalyticsManager.h"
+
+    #define PB_UPLOAD_ARCHIVE_PREFIX @"VideoTransfer"
+    #define PB_HTTP_SERVER_START_PORT 8080
+    #define PB_BONJOUR_SERVICE_TYPE @"_imagetransfer._tcp."
+    #define PB_APP_URL_SCHEME @"videotransfer://"
+    #define PB_WEBPART_MOBILE_NAME @"WebPart-mobile"
+
+    #define PB_LITE_VERSION_MAX_ASSETS 5
+    #define PB_LITE_VERSION_MAX_PHOTOS_TO_SEND 5
+    #define PB_LITE_VERSION_MAX_VIDEOS_TO_SEND 1
+    #define PB_LITE_VERSION_MAX_VIDEO_DURATION 30.0
+
+    #define PB_LITE_VERSION_AD_FILENAME @"GETPLUS.JPG"
+
+    #define PB_SUPPORT_EMAIL_ADDRESS @"team@capablebits.com"
+
+    #define PB_APPSTORE_URLSTRING_FORMAT @"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=%@&mt=8"
+    #define PB_APPSTORE_RATE_URLSTRING_FORMAT @"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software"
+
+#if PB_LITE
+    //lite version specific definitions
+
+    #define PB_APP_DELEGATE_CLASS_NAME @"Lite_PBVideoAppDelegate"
+    #define PB_APP_NAME @"VideoTransfer"
+    #define PB_RESOURCE_PREFIX @"Lite"
+    #define PB_PLUS_INAPP_ID @"com.capablebits.videotransfer.inapp.full"
+    #define PB_UNLIMITED_PHOTOS_INAPP_ID @"com.capablebits.videotransfer.inapp.photos"
+    #define PB_UNLIMITED_VIDEOS_INAPP_ID @"com.capablebits.videotransfer.inapp.videos"
+
+    #define PB_LITE_VERSION_AD_IMAGE_URL @"http://sendp.com/ad/ad.jpg"
+    #define PB_LITE_VERSION_AD_VERSION_URL @"http://sendp.com/ad/ad.version"
+
+    #define PB_APPSTORE_ID @"640087629"
+    #define PB_FLURRY_ID @"5GHFM7TH6SQ53N8SQ7GR"
+
+    #define PB_DROPBOX_APP_KEY @"59okypu9wq3gn77"
+    #define PB_DROPBOX_APP_SECRET @"mv78fve7uy4k1ok"
+    #define PB_DROPBOX_ROOT kDBRootAppFolder
+
+    #define PB_GOOGLE_DRIVE_CLIENT_KEY @"376572349767-dov8gc5k21sfbp0c6d58126d3hsghsh4.apps.googleusercontent.com"
+    #define PB_GOOGLE_DRIVE_CLIENT_SECRET @"VW1iHaLruebYOEckkD3o59O2"
+    #define PB_GOOGLE_KEYCHAIN_ITEM_NAME @"VideoTransferGoogleDrive"
+
+    #define PB_FLICKR_API_KEY @"9987d2cd62aee23e71aa641cbfecbc50"
+    #define PB_FLICKR_API_SECRET @"e33a689cb71cb435"
+    #define PB_CALLBACK_URL_BASE_STRING @"videotransferflickr://auth";
+#else
+    //full version specific definitions
+
+    #define PB_APP_DELEGATE_CLASS_NAME @"PBVideoAppDelegate"
+    #define PB_APP_NAME @"VideoTransferPlus"
+    #define PB_APPSTORE_ID @"640086769"
+    #define PB_FLURRY_ID @"4DTCZ4SCQN8FRNSVN43X"
+
+    #define PB_DROPBOX_APP_KEY @"2gg2hiwx4q031k3"
+    #define PB_DROPBOX_APP_SECRET @"x2tmzp3myk09t2t"
+    #define PB_DROPBOX_ROOT kDBRootAppFolder
+
+    #define PB_GOOGLE_DRIVE_CLIENT_KEY @"427440311377-csvem5d0l8s18660mltsknf2jbg0k0cd.apps.googleusercontent.com"
+    #define PB_GOOGLE_DRIVE_CLIENT_SECRET @"eJPeqXj6Tod8HECM3xMDDMiW"
+    #define PB_GOOGLE_KEYCHAIN_ITEM_NAME @"VideoTransferPlusGoogleDrive"
+
+    #define PB_FLICKR_API_KEY @"9a2b58ac0e13e5c6e0e9b9d9771ea24a"
+    #define PB_FLICKR_API_SECRET @"d08386b0a9abb881"
+    #define PB_CALLBACK_URL_BASE_STRING @"videotransferplusflickr://auth";
+#endif
+
+#endif

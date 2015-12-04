@@ -1,0 +1,97 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf390
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fnil\fcharset0 Noteworthy-Light;\f2\fnil\fcharset0 HelveticaNeue;
+}
+{\colortbl;\red255\green255\blue255;\red26\green26\blue26;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww17620\viewh14880\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\b\fs50 \cf0 Integration\
+\
+\pard\pardeftab720
+
+\b0\fs28 \cf0 Follow these steps to integrate AppMessages SDK into your application:\
+\'a0\
+1. 
+\b Register your application
+\b0 . Select \'93Add Application\'94 menu item from your username dropdown menu on the top right corner of the admin panel.\
+\'a0\
+2. 
+\b Download the AppMessages SDK.
+\b0  You will find it on the Application Settings page (you\'92ll be prompted to agree with the AppMessages SDK License Agreement).\
+\'a0\
+Note: the SDK is intended only for the app it's been generated for. Do not use the same SDK for different applications.\
+\'a0\
+3. 
+\b Drag the AppMessages SDK into your project's file folder.
+\b0 \
+\'a0\
+4. 
+\b Enable the Entitlements in your project.
+\b0  Open the project, go to Summary, check "Use Entitlements File". The Entitlements should contain your bundle identifier with "AppIdentifierPrefix".\
+\'a0\
+5. 
+\b Add your bundle identifier to the Keychain Groups.
+\b0  Open the project, go to Summary, find Keychain Groups, add your bundle identifier to the Keychain Groups.\
+\'a0\
+6. 
+\b Initialize the AppMessages SDK
+\b0  in your application delegate in didFinishLaunchingWithOptions:\
+\'a0\
+\'a0 
+\fs24 \'a0\'a0NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
+\fs28 \
+
+\fs24 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 APPMESS_SDK_APP_ID, @"amApplicationCode",
+\fs28 \
+
+\fs24 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 APPMESS_SDK_APP_KEY, @"amSecretKey",
+\fs28 \
+
+\fs24 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 AM_SERVER_URL, @"amServerUrl",
+\fs28 \
+
+\fs24 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 [NSNumber numberWithBool:YES], @"showAutomatically",
+\fs28 \
+
+\fs24 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 nil];
+\fs28 \
+
+\fs24 \'a0\'a0\'a0 [AppMessages invokeWithParams:params];\
+
+\fs28 \
+When you need to display AppMessages creative\'a0after a specific event do not set "showAutomatically" flag to YES. Instead set this flag to NO and when you need your creative to appear just call [AppMessages showInstanceWhenReady]. Note that it may take time for a graphical creative to be displayed as it needs to download all necessary assets.
+\f1\fs30 \
+
+\f0\fs28 \
+Note: The SDK you download is intended only for the app it's been generated for. AppMessages.h file already contains 
+\fs24 APPMESS_SDK_APP_ID Key
+\fs28  and 
+\fs24 APPMESS_SDK_APP_KEY
+\fs28 .\
+\'a0\
+7. By default AppMessages SDK is initialized on the app startup. We also recommend to implement the method [AppMessages restoreFromBackground]; in\'a0application WillEnterForeground to initialize the AppMessages SDK when the app is restored from background.\
+\'a0\
+8. Add AdSupport.framework with optional (weak) linking into your project built in X-Code 4.5 and higher.\
+\
+9. Make sure that your project contains standard \cf2 Security.framework.
+\f2\fs26 \
+\
+
+\f0\fs28 \cf0 10. You can also subscribe to the "amSessionComplete" notification in order to track AppMessages sessions: [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(amSessionCompleteSelector:) name:@"amSessionComplete" object:nil]; In case notification object contains data object AppMessages session is complete and there is a creative to display. Depending on "showAutomatically" flag the creative will or will not be displayed (See a.6). If notification object has no data AppMessages session is complete without any creatives to display.\
+\
+11. 
+\b Build the project.
+\b0  You should see the "AppMessages succeeded!" message in the logs.\
+\'a0\
+12. 
+\b Test the integration. 
+\b0 By default AppMessages will serve campaigns you configured for the current application so you can see them right inside your app.\
+\
+Using Test Ads: you can still enable Test Ads feature on the App Settings page. Run your application to receive "Show Once Text" test creative with the name of your application in its title. On the next runs you\'92ll see the ongoing graphic creative.\
+\
+Note: Test ads will be automatically disabled in 24 hours after activation or in case selected app version generated 100+ installs.\
+\
+--\
+ver. 28 aug 2013;\
+}

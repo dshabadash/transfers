@@ -1,0 +1,174 @@
+diff --git a/MyApp/External/appirater/Appirater.h b/MyApp/External/appirater/Appirater.h
+index 7cc4f2f..109ba97 100755
+--- a/MyApp/External/appirater/Appirater.h
++++ b/MyApp/External/appirater/Appirater.h
+@@ -36,7 +36,7 @@
+ 
+ #import <Foundation/Foundation.h>
+ #import "AppiraterDelegate.h"
+-#import <StoreKit/StoreKit.h>
++#import "LSAlert.h"
+ 
+ extern NSString *const kAppiraterFirstUseDate;
+ extern NSString *const kAppiraterUseCount;
+@@ -85,12 +85,9 @@ extern NSString *const kAppiraterReminderRequestDate;
+  */
+ #define APPIRATER_RATE_LATER			NSLocalizedStringFromTableInBundle(@"Remind me later", @"AppiraterLocalizable", [Appirater bundle], nil)
+ 
+-@interface Appirater : NSObject <UIAlertViewDelegate, SKStoreProductViewControllerDelegate> {
++@interface Appirater : NSObject <UIAlertViewDelegate>
+ 
+-	UIAlertView		*ratingAlert;
+-}
+-
+-@property(nonatomic, strong) UIAlertView *ratingAlert;
++@property(nonatomic, strong) id<LSAlert> ratingAlert;
+ @property(nonatomic) BOOL openInAppStore;
+ #if __has_feature(objc_arc_weak)
+ @property(nonatomic, weak) NSObject <AppiraterDelegate> *delegate;
+diff --git a/MyApp/External/appirater/Appirater.m b/MyApp/External/appirater/Appirater.m
+index e62c487..2bd89c9 100755
+--- a/MyApp/External/appirater/Appirater.m
++++ b/MyApp/External/appirater/Appirater.m
+@@ -37,6 +37,7 @@
+ #import "Appirater.h"
+ #import <SystemConfiguration/SCNetworkReachability.h>
+ #include <netinet/in.h>
++#import "LSFiveStarsView.h"
+ 
+ #if ! __has_feature(objc_arc)
+ #warning This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
+@@ -268,21 +269,26 @@ static BOOL _alwaysUseMainBundle = NO;
+ }
+ 
+ - (void)showRatingAlert:(BOOL)displayRateLaterButton {
+-  UIAlertView *alertView = nil;
+-  if (displayRateLaterButton) {
+-  	alertView = [[UIAlertView alloc] initWithTitle:self.alertTitle
+-                                           message:self.alertMessage
+-                                          delegate:self
+-                                 cancelButtonTitle:self.alertCancelTitle
+-                                 otherButtonTitles:self.alertRateTitle, self.alertRateLaterTitle, nil];
+-  } else {
+-  	alertView = [[UIAlertView alloc] initWithTitle:self.alertTitle
+-                                           message:self.alertMessage
+-                                          delegate:self
+-                                 cancelButtonTitle:self.alertCancelTitle
+-                                 otherButtonTitles:self.alertRateTitle, nil];
+-  }
+-
++    id<LSAlert> alertView = [LSAlert alertWithTitle:self.alertTitle message:self.alertMessage];
++    
++    __weak typeof (self) weakSelf = self;
++    
++    [alertView addActionWithTitle:self.alertRateTitle handler:^(id<LSAlert> alert) {
++        [weakSelf alertView:nil didDismissWithButtonIndex:1];
++    }];
++    
++    if (displayRateLaterButton) {
++        [alertView addActionWithTitle:self.alertRateLaterTitle handler:^(id<LSAlert> alert) {
++            [weakSelf alertView:nil didDismissWithButtonIndex:2];
++        }];
++    }
++    
++    [alertView addCancelActionWithTitle:self.alertCancelTitle handler:^(id<LSAlert> alert) {
++        [weakSelf alertView:nil didDismissWithButtonIndex:0];
++    }];
++    
++    [alertView addCustomView:[LSFiveStarsView new] withHeight:44.0];
++    
+ 	self.ratingAlert = alertView;
+     [alertView show];
+ 
+@@ -484,10 +490,10 @@ static BOOL _alwaysUseMainBundle = NO;
+ }
+ 
+ - (void)hideRatingAlert {
+-	if (self.ratingAlert.visible) {
++	if (self.ratingAlert.isVisible) {
+ 		if (_debug)
+ 			NSLog(@"APPIRATER Hiding Alert");
+-		[self.ratingAlert dismissWithClickedButtonIndex:-1 animated:NO];
++        [self.ratingAlert hide:NO];
+ 	}	
+ }
+ 
+@@ -590,48 +596,26 @@ static BOOL _alwaysUseMainBundle = NO;
+ 	[userDefaults setBool:YES forKey:kAppiraterRatedCurrentVersion];
+ 	[userDefaults synchronize];
+ 
+-	//Use the in-app StoreKit view if available (iOS 6) and imported. This works in the simulator.
+-	if (![Appirater sharedInstance].openInAppStore && NSStringFromClass([SKStoreProductViewController class]) != nil) {
+-		
+-		SKStoreProductViewController *storeViewController = [[SKStoreProductViewController alloc] init];
+-		NSNumber *appId = [NSNumber numberWithInteger:_appId.integerValue];
+-		[storeViewController loadProductWithParameters:@{SKStoreProductParameterITunesItemIdentifier:appId} completionBlock:nil];
+-		storeViewController.delegate = self.sharedInstance;
+-        
+-        id <AppiraterDelegate> delegate = self.sharedInstance.delegate;
+-		if ([delegate respondsToSelector:@selector(appiraterWillPresentModalView:animated:)]) {
+-			[delegate appiraterWillPresentModalView:self.sharedInstance animated:_usesAnimation];
+-		}
+-		[[self getRootViewController] presentViewController:storeViewController animated:_usesAnimation completion:^{
+-			[self setModalOpen:YES];
+-			//Temporarily use a black status bar to match the StoreKit view.
+-			[self setStatusBarStyle:[UIApplication sharedApplication].statusBarStyle];
+-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
+-			[[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent animated:_usesAnimation];
+-#endif
+-		}];
+-	
+ 	//Use the standard openUrl method if StoreKit is unavailable.
+-	} else {
+-		
+-		#if TARGET_IPHONE_SIMULATOR
+-		NSLog(@"APPIRATER NOTE: iTunes App Store is not supported on the iOS simulator. Unable to open App Store page.");
+-		#else
+-		NSString *reviewURL = [templateReviewURL stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%@", _appId]];
+-
+-		// iOS 7 needs a different templateReviewURL @see https://github.com/arashpayan/appirater/issues/131
+-		if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 && [[[UIDevice currentDevice] systemVersion] floatValue] < 7.1) {
+-			reviewURL = [templateReviewURLiOS7 stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%@", _appId]];
+-		}
+-        // iOS 8 needs a different templateReviewURL also @see https://github.com/arashpayan/appirater/issues/182
+-        else if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+-        {
+-            reviewURL = [templateReviewURLiOS8 stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%@", _appId]];
+-        }
+ 
+-		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:reviewURL]];
+-		#endif
+-	}
++    #if TARGET_IPHONE_SIMULATOR
++    NSLog(@"APPIRATER NOTE: iTunes App Store is not supported on the iOS simulator. Unable to open App Store page.");
++    #else
++    NSString *reviewURL = [templateReviewURL stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%@", _appId]];
++
++    // iOS 7 needs a different templateReviewURL @see https://github.com/arashpayan/appirater/issues/131
++    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 && [[[UIDevice currentDevice] systemVersion] floatValue] < 7.1) {
++        reviewURL = [templateReviewURLiOS7 stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%@", _appId]];
++    }
++    // iOS 8 needs a different templateReviewURL also @see https://github.com/arashpayan/appirater/issues/182
++    else if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
++    {
++        reviewURL = [templateReviewURLiOS8 stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%@", _appId]];
++    }
++
++    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:reviewURL]];
++    #endif
++	
+ }
+ 
+ - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+@@ -672,11 +656,6 @@ static BOOL _alwaysUseMainBundle = NO;
+ 	}
+ }
+ 
+-//Delegate call from the StoreKit view.
+-- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
+-	[Appirater closeModal];
+-}
+-
+ //Close the in-app rating (StoreKit) view and restore the previous status bar style.
+ + (void)closeModal {
+ 	if (_modalOpen) {

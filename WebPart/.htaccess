@@ -1,0 +1,5 @@
+
+RewriteEngine On
+RewriteBase /
+RewriteRule ^([a-zA-Z0-9_-]+)$ client.php?permanent_id=$1
+#RewriteRule ^([a-zA-Z0-9_-]+)/$ client.php?permanent_id=$1

@@ -1,0 +1,215 @@
+/* 
+  Localizable.strings
+  PhotoBox
+
+  Created by Viacheslav Savchenko on 4/16/13.
+  Copyright (c) 2013 CapableBits. All rights reserved.
+*/
+
+/* No comment provided by engineer. */
+"Back" = "戻る";
+
+/* button */
+"Cancel" = "キャンセル";
+
+/* No comment provided by engineer. */
+"Cannot connect to iTunes Store" = "iTunes Store に接続できません";
+
+/* No comment provided by engineer. */
+"Choose photos to send" = "送信する写真を選択してください";
+
+/* No comment provided by engineer. */
+"Close" = "閉じる";
+
+/* No comment provided by engineer. */
+"Computer" = "コンピュータ";
+
+/* No comment provided by engineer. */
+"computer" = "コンピュータ";
+
+/* No comment provided by engineer. */
+"Failed to register: something went wrong." = "問題が発生したため、登録に失敗しました。";
+
+/* No comment provided by engineer. */
+"Help" = "ヘルプ";
+
+/* No comment provided by engineer. */
+"Image Transfer" = "Image Transfer";
+
+/* No comment provided by engineer. */
+"Launch Image Transfer on receiving device and pick it from the list" = "送信先のデバイスで Image Transfer を起動し、リストから選択してください。";
+
+/* No comment provided by engineer. */
+"Legal Notes" = "法律事項";
+
+/* No comment provided by engineer. */
+"Looking for devices" = "デバイスを探しています";
+
+/* button */
+"No" = "いいえ";
+
+/* No comment provided by engineer. */
+"No email account" = "メールアカウントがありません";
+
+/* No comment provided by engineer. */
+"No Facebook account" = "Facebookのアカウントがありません";
+
+/* No comment provided by engineer. */
+"No Twitter account" = "Twitter のアカウントがありません";
+
+/* button
+ OK */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Oops!" = "おっと！";
+
+/* Password */
+"Password" = "パスワード";
+
+/* No comment provided by engineer. */
+"Photos were successfully received from %@, and saved to %@ album." = "%1$@からの写真を受信し、%2$@に保存しました。";
+
+/* No comment provided by engineer. */
+"Photos were successfully received. Importing..." = "写真を受信しました。インポート中です...";
+
+/* No comment provided by engineer. */
+"Photos were successfully sent to %@." = "%@に写真を送信しました。";
+
+/* No comment provided by engineer. */
+"Rate This App" = "このアプリを評価する";
+
+/* No comment provided by engineer. */
+"Receiving Photos" = "写真を受信中です";
+
+/* No comment provided by engineer. */
+"Receiving photos from %@. This might take up to few minutes." = "%@から写真を受信中です。完了までに数分かかる場合があります。";
+
+/* No comment provided by engineer. */
+"Register" = "登録";
+
+/* No comment provided by engineer. */
+"Register Image Transfer" = "Image Transfer を登録";
+
+/* No comment provided by engineer. */
+"Saving failed: %@\n%@" = "保存に失敗しました：%1$@\n%2$@";
+
+/* No comment provided by engineer. */
+"Send" = "送信";
+
+/* No comment provided by engineer. */
+"Send to Computer" = "コンピュータに送信";
+
+/* No comment provided by engineer. */
+"Send to iPhone or iPad" = "iPhone または iPad に送信";
+
+/* No comment provided by engineer. */
+"Sending Photos" = "写真を送信中です";
+
+/* No comment provided by engineer. */
+"Sending photos to %@. This might take up to few minutes." = "%@に写真を送信中です。完了までに数分かかる場合があります。";
+
+/* No comment provided by engineer. */
+"Share This App" = "このアプリをシェア";
+
+/* No comment provided by engineer. */
+"Share via Email" = "メールでシェア";
+
+/* No comment provided by engineer. */
+"Share via Facebook" = "Facebook でシェア";
+
+/* No comment provided by engineer. */
+"Share via Twitter" = "Twitter でシェア";
+
+/* No comment provided by engineer. */
+"Support" = "サポート";
+
+/* No comment provided by engineer. */
+"There are no email accounts configured. You can add or create email account in the Settings app." = "メールアカウントが設定されていません。メールアカウントの追加または作成は、設定アプリから行ってください。";
+
+/* No comment provided by engineer. */
+"There are no Facebook accounts configured. You can add or create a Facebook account in the Settings app." = "Facebook アカウントが設定されていません。Facebook アカウントの追加または作成は、設定アプリから行ってください。";
+
+/* No comment provided by engineer. */
+"There are no Twitter accounts configured. You can add or create a Twitter account in the Settings app." = "Twitter アカウントが設定されていません。Twitter アカウントの追加または作成は、設定アプリから行ってください。";
+
+/* No comment provided by engineer. */
+"This email is not valid" = "メールアドレスが無効です。";
+
+/* No comment provided by engineer. */
+"Troubleshooting" = "トラブルシューティング";
+
+/* No comment provided by engineer. */
+"Where would you like to send photos to?" = "どこに写真を送りますか？";
+
+/* button */
+"Yes" = "はい";
+
+/* Albums */
+"Albums" = "アルバム";
+
+/* Aw, Snap! - data transfer was canceled */
+"Aw, Snap!" = "おっと、ストップ！";
+
+/* Do you want to launch it? */
+"Do you want to launch it?" = "起動しますか？";
+
+/* Done */
+"Done" = "完了";
+
+/* Image Transfer allows you to send only photos */
+"Image Transfer allows you to send only photos" = "Image Transfer を使って送信できるのは写真のみです。";
+
+/* Image Transfer allows you to send up to 5 photos at a time for free */
+"Image Transfer allows you to send up to 5 photos at a time for free" = "Image Transfer を使うと一度に最高５枚まで無料で写真を送信できます。";
+
+/* Image Transfer, the easiest and fastest way to send and receive photos on your iPhone */
+"Image Transfer, the easiest and fastest way to send and receive photos on your iPhone" = "Image Transfer は、iPhone を使って写真をもっとも手軽に送信・受信できる方法です。";
+
+/* Push notification */
+"Hury up! Go back to Image Transfer to continue data transfer!" = "急いで！今すぐ Image Transfer に戻ってデータ転送を再開しましょう！";
+
+/* Button in alert */
+"Launch Now" = "今すぐ起動";
+
+/* Button in alert */
+"No, Thanks" = "起動しない";
+
+/* Not connected to Wi-Fi */
+"Not connected to Wi-Fi" = "Wi-Fi に接続されていません";
+
+/* Open */
+"Open" = "開く";
+
+/* Receive */
+"Receive" = "受信する";
+
+/* Receive Photos */
+"Receive Photos" = "写真を受信";
+
+/* Send 5 photos */
+"Send 5 photos" = "写真を５つ送信";
+
+/* Send only photos */
+"Send only photos" = "写真のみ送信";
+
+/* Transferring was canceled. Image Transfer app must be running while transferring on both devices. */
+"Transferring was canceled. %@ app must be running while transferring on both devices." = "転送がキャンセルされました。転送中は両方のデバイス上で %@ アプリが起動している必要があります。";
+
+/* Want to send unlimited photos and videos? */
+"Want to send unlimited photos and videos?" = "写真やビデオを好きなだけ送りたいですか？";
+
+/* Want to send unlimited photos? */
+"Want to send unlimited photos?" = "写真を好きなだけ送りたいですか？";
+
+/* Want to send unlimited videos? */
+"Want to send unlimited videos?" = "ビデオを好きなだけ送りたいですか？";
+
+/* You have ImageTrasnfer Plus installed. */
+"You have ImageTrasnfer Plus installed." = "Image Transfer Plus はすでにインストール済みです。";
+
+/* Restore purchases button title */
+"Restore purchases" = "購入を復元する";
+
+/* Limited transfer button title */
+"Limited transfer" = "限られた転送";

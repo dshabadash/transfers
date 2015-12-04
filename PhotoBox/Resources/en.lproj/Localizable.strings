@@ -1,0 +1,276 @@
+/* 
+  Localizable.strings
+  PhotoBox
+
+  Created by Viacheslav Savchenko on 4/16/13.
+  Copyright (c) 2013 CapableBits. All rights reserved.
+*/
+
+/* No comment provided by engineer. */
+"Back" = "Back";
+
+/* button */
+"Cancel" = "Cancel";
+
+/* No comment provided by engineer. */
+"Cannot connect to iTunes Store" = "Cannot connect to iTunes Store";
+
+/* No comment provided by engineer. */
+"Choose photos to send" = "Choose photos to send";
+
+/* No comment provided by engineer. */
+"Close" = "Close";
+
+/* No comment provided by engineer. */
+"Computer" = "Computer";
+
+/* No comment provided by engineer. */
+"computer" = "computer";
+
+/* No comment provided by engineer. */
+"Failed to register: something went wrong." = "Failed to register: something went wrong.";
+
+/* No comment provided by engineer. */
+"Help" = "Help";
+
+/* No comment provided by engineer. */
+"Uploading to %@ was canceled." = "Uploading to %@ was canceled.";
+
+/* No comment provided by engineer. */
+"Copy to clipboard" = "Copy to clipboard";
+
+/* No comment provided by engineer. */
+"Shared link on upload %@ folder successfully copied to clipboard." = "Shared link on upload %@ folder successfully copied to clipboard.";
+
+/* No comment provided by engineer. */
+"Unexpected network error." = "Unexpected network error.";
+
+/* No comment provided by engineer. */
+"Please, check your internet connection and try again." = "Please, check your internet connection and try again.";
+
+/* No comment provided by engineer. */
+"Please, check Help->Troubleshooting for possible solutions." = "Please, check Help->Troubleshooting for possible solutions.";
+
+/* No comment provided by engineer. */
+"Show Help" = "Show Help";
+
+/* No comment provided by engineer. */
+"Image Transfer" = "Image Transfer";
+
+/* No comment provided by engineer. */
+"Launch Image Transfer on receiving device and pick it from the list" = "Launch Image Transfer on receiving device and pick it from the list";
+
+/* No comment provided by engineer. */
+"Legal Notes" = "Legal Notes";
+
+/* No comment provided by engineer. */
+"Looking for devices" = "Looking for devices";
+
+/* button */
+"No" = "No";
+
+/* No comment provided by engineer. */
+"Logout from %@" = "Logout from %@";
+
+/* No comment provided by engineer. */
+"You have sucessfully logged out from %@ account." = "You have sucessfully logged out from %@ account.";
+
+/* No comment provided by engineer. */
+"Login to %@" = "Login to %@";
+
+/* No comment provided by engineer. */
+"No email account" = "No email account";
+
+/* No comment provided by engineer. */
+"No Facebook account" = "No Facebook account";
+
+/* No comment provided by engineer. */
+"No Twitter account" = "No Twitter account";
+
+/* button
+ OK */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Oops!" = "Oops!";
+
+/* Password */
+"Password" = "Password";
+
+/* No comment provided by engineer. */
+"Photos were successfully received from %@, and saved to %@ album." = "Photos were successfully received from %1$@, and saved to %2$@ album.";
+
+/* No comment provided by engineer. */
+"Photos were successfully received. Importing..." = "Photos were successfully received. Importing...";
+
+/* No comment provided by engineer. */
+"Photos were successfully sent to %@." = "Photos were successfully sent to %@.";
+
+/* No comment provided by engineer. */
+"Photos were successfully sent to %@. You can share link to uploaded folder." = "Photos were successfully sent to %@. You can share link to uploaded folder.";
+
+/* No comment provided by engineer. */
+"Rate This App" = "Rate This App";
+
+/* No comment provided by engineer. */
+"Receiving Photos" = "Receiving Photos";
+
+/* No comment provided by engineer. */
+"Receiving photos from %@. This might take up to few minutes." = "Receiving photos from %@. This might take up to few minutes.";
+
+/* No comment provided by engineer. */
+"Transferring photos to %@. This might take up to few minutes." = "Transferring photos to %@. This might take up to few minutes.";
+
+/* No comment provided by engineer. */
+"Register" = "Register";
+
+/* No comment provided by engineer. */
+"Register Image Transfer" = "Register Image Transfer";
+
+/* No comment provided by engineer. */
+"Saving failed: %@\n%@" = "Saving failed: %1$@\n%2$@";
+
+/* No comment provided by engineer. */
+"Send" = "Send";
+
+/* No comment provided by engineer. */
+"Send to Computer" = "Send to Computer";
+
+/* No comment provided by engineer. */
+"Send to %@" = "Send to %@";
+
+/* No comment provided by engineer. */
+"Send to iPhone or iPad" = "Send to iPhone or iPad";
+
+/* No comment provided by engineer. */
+"Sending Photos" = "Sending Photos";
+
+/* No comment provided by engineer. */
+"Sending photos to %@. This might take up to few minutes." = "Sending photos to %@. This might take up to few minutes.";
+
+/* No comment provided by engineer. */
+"Share This App" = "Share This App";
+
+/* No comment provided by engineer. */
+"Share via Email" = "Share via Email";
+
+/* No comment provided by engineer. */
+"Share via Facebook" = "Share via Facebook";
+
+/* No comment provided by engineer. */
+"Share via Twitter" = "Share via Twitter";
+
+/* No comment provided by engineer. */
+"Support" = "Support";
+
+/* No comment provided by engineer. */
+"There are no email accounts configured. You can add or create email account in the Settings app." = "There are no email accounts configured. You can add or create email account in the Settings app.";
+
+/* No comment provided by engineer. */
+"There are no Facebook accounts configured. You can add or create a Facebook account in the Settings app." = "There are no Facebook accounts configured. You can add or create a Facebook account in the Settings app.";
+
+/* No comment provided by engineer. */
+"There are no Twitter accounts configured. You can add or create a Twitter account in the Settings app." = "There are no Twitter accounts configured. You can add or create a Twitter account in the Settings app.";
+
+/* No comment provided by engineer. */
+"This email is not valid" = "This email is not valid";
+
+/* No comment provided by engineer. */
+"Troubleshooting" = "Troubleshooting";
+
+/* No comment provided by engineer. */
+"Where would you like to send photos to?" = "Where would you like to send photos to?";
+
+/* button */
+"Yes" = "Yes";
+
+/* Albums */
+"Albums" = "Albums";
+
+/* Aw, Snap! */
+"Aw, Snap!" = "Aw, Snap!";
+
+/* Do you want to launch it? */
+"Do you want to launch it?" = "Do you want to launch it?";
+
+/* Done */
+"Done" = "Done";
+
+/* Image Transfer allows you to send only photos */
+"Image Transfer allows you to send only photos" = "Image Transfer allows you to send only photos";
+
+/* Image Transfer allows you to send up to 5 photos at a time for free */
+"Image Transfer allows you to send up to 5 photos at a time for free" = "Image Transfer allows you to send up to 5 photos at a time for free";
+
+/* Image Transfer, the easiest and fastest way to send and receive photos on your iPhone */
+"Image Transfer, the easiest and fastest way to send and receive photos on your iPhone" = "Image Transfer, the easiest and fastest way to send and receive photos on your iPhone";
+
+/* No comment provided by engineer. */
+"the easiest and fastest way to send and receive photos on your iPhone" = "the easiest and fastest way to send and receive photos on your iPhone";
+
+/* No comment provided by engineer. */
+"%@ shared link" = "%@ shared link";
+
+/* No comment provided by engineer. */
+"You can't send iMessages" = "You can't send iMessages";
+
+/* No comment provided by engineer. */
+"Send iMessage" = "Send iMessage";
+
+/* No comment provided by engineer. */
+"Send e-mail" = "Send e-mail";
+
+/* No comment provided by engineer. */
+"Copy to Clipboard" = "Copy to Clipboard";
+
+
+/* ImageTransfer is about to be shut down */
+"ImageTransfer is about to be shut down" = "ImageTransfer is about to be shut down";
+
+/* Push notification text */
+"Hury up! Go back to Image Transfer to continue data transfer!" = "Hury up! Go back to Image Transfer to continue data transfer!";
+
+/* Launch Now */
+"Launch Now" = "Launch Now";
+
+/* No, Thanks */
+"No, Thanks" = "No, Thanks";
+
+/* Not connected to Wi-Fi */
+"Not connected to Wi-Fi" = "Not connected to Wi-Fi";
+
+/* Open */
+"Open" = "Open";
+
+/* Receive */
+"Receive" = "Receive";
+
+/* Receive Photos */
+"Receive Photos" = "Receive Photos";
+
+/* Send 5 photos */
+"Send 5 photos" = "Send 5 photos";
+
+/* Send only photos */
+"Send only photos" = "Send only photos";
+
+/* Transferring was canceled. Image Transfer app must be running while transferring on both devices. */
+"Transferring was canceled. %@ app must be running while transferring on both devices." = "Transferring was canceled. %@ app must be running while transferring on both devices.";
+
+/* Want to send unlimited photos and videos? */
+"Want to send unlimited photos and videos?" = "Want to send unlimited photos and videos?";
+
+/* Want to send unlimited photos? */
+"Want to send unlimited photos?" = "Want to send unlimited photos?";
+
+/* Want to send unlimited videos? */
+"Want to send unlimited videos?" = "Want to send unlimited videos?";
+
+/* You have ImageTrasnfer Plus installed. */
+"You have ImageTrasnfer Plus installed." = "You have ImageTrasnfer Plus installed.";
+
+/* Restore purchases button title */
+"Restore purchases" = "Restore purchases";
+
+/* Limited transfer button title */
+"Limited transfer" = "Limited transfer";

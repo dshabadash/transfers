@@ -1,0 +1,272 @@
+/* 
+  Localizable.strings
+  PhotoBox
+
+  Created by Viacheslav Savchenko on 4/16/13.
+  Copyright (c) 2013 CapableBits. All rights reserved.
+*/
+
+/* No comment provided by engineer. */
+"Back" = "Back";
+
+/* button */
+"Cancel" = "Cancel";
+
+/* No comment provided by engineer. */
+"Cannot connect to iTunes Store" = "Не могу подключиться к iTunes Store";
+
+/* No comment provided by engineer. */
+"Choose photos to send" = "Выберите фотографии для отправки";
+
+/* No comment provided by engineer. */
+"Close" = "Закрыть";
+
+/* No comment provided by engineer. */
+"Computer" = "Компьютер";
+
+/* No comment provided by engineer. */
+"computer" = "компьютер";
+
+/* No comment provided by engineer. */
+"Failed to register: something went wrong." = "Ошибка регистрации: что-то пошло не так";
+
+/* No comment provided by engineer. */
+"Help" = "Помощь";
+
+/* No comment provided by engineer. */
+"Image Transfer" = "Image Transfer";
+
+/* No comment provided by engineer. */
+"Launch Image Transfer on receiving device and pick it from the list" = "Запустите Image Transfer на принимающем устройстве и выберите его из списка";
+
+/* No comment provided by engineer. */
+"Legal Notes" = "Legal Notes";
+
+/* No comment provided by engineer. */
+"Logout from %@" = "Выйти из %@";
+
+/* No comment provided by engineer. */
+"You have sucessfully logged out from %@ account." = "Вы успешно вышли из учетной записи %@.";
+
+/* No comment provided by engineer. */
+"Login to %@" = "Войти в %@";
+
+/* No comment provided by engineer. */
+"Looking for devices" = "Поиск устройств";
+
+/* button */
+"No" = "No";
+
+/* No comment provided by engineer. */
+"No email account" = "Отсутствует e-mail аккаунт";
+
+/* No comment provided by engineer. */
+"No Facebook account" = "Отсутствует Facebook аккаунт";
+
+/* No comment provided by engineer. */
+"No Twitter account" = "Отсутствует Twitter аккаунт";
+
+/* button
+ OK */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Oops!" = "Ой!";
+
+/* Password */
+"Password" = "Пароль";
+
+/* No comment provided by engineer. */
+"Photos were successfully received from %@, and saved to %@ album." = "Файлы успешно получены от %1$@, и сохранены в альбоме %2$@.";
+
+/* No comment provided by engineer. */
+"Photos were successfully received. Importing..." = "Файлы успешно получены. Импортирование...";
+
+/* No comment provided by engineer. */
+"Photos were successfully sent to %@." = "Файлы успешно отправлены на %@.";
+
+/* No comment provided by engineer. */
+"Photos were successfully sent to %@. You can share link to uploaded folder." = "Файлы успешно отправлены на %@. Вы можете поделиться ссылкой на загруженную папку.";
+
+/* No comment provided by engineer. */
+"Uploading to %@ was canceled." = "Загрузка на %@ была отменена.";
+
+/* No comment provided by engineer. */
+"Copy to clipboard" = "Скопировать в буфер обмена";
+
+/* No comment provided by engineer. */
+"the easiest and fastest way to send and receive photos on your iPhone" = "самый простой и быстрый способ отправить фотографии на ваш iPhone";
+
+/* No comment provided by engineer. */
+"%@ shared link" = "Ссылка %@";
+
+/* No comment provided by engineer. */
+"You can't send iMessages" = "Вы не можете отправлять iMessages";
+
+/* No comment provided by engineer. */
+"Send iMessage" = "Отправить iMessage";
+
+/* No comment provided by engineer. */
+"Send e-mail" = "Отправить e-mail";
+
+/* No comment provided by engineer. */
+"Copy to Clipboard" = "Скопировать ссылку";
+
+/* No comment provided by engineer. */
+"Shared link on upload %@ folder successfully copied to clipboard." = "Ссылка на загруженную в %@ папку успешно скопирована в буфер обмена.";
+
+/* No comment provided by engineer. */
+"Unexpected network error." = "Ошибка сети.";
+
+/* No comment provided by engineer. */
+"Please, check your internet connection and try again." = "Пожалуйста, проверьте ваше подключение к интернету и повторите отправку еще раз.";
+
+/* No comment provided by engineer. */
+"Please, check Help->Troubleshooting for possible solutions." = "Пожалуйста, просмотрите Помощь->Советы для получения возможных решений.";
+
+/* No comment provided by engineer. */
+"Show Help" = "Показать Помощь.";
+
+/* No comment provided by engineer. */
+"Rate This App" = "Оцените приложение";
+
+/* No comment provided by engineer. */
+"Receiving Photos" = "Получение фотографий";
+
+/* No comment provided by engineer. */
+"Receiving photos from %@. This might take up to few minutes." = "Получение фотографий от %@. Это может занять несколько минут";
+
+/* No comment provided by engineer. */
+"Register" = "Зарегестрировать";
+
+/* No comment provided by engineer. */
+"Register Image Transfer" = "Регистрация приложения";
+
+/* No comment provided by engineer. */
+"Saving failed: %@\n%@" = "Ошибка сохранения: %1$@\n%2$@";
+
+/* No comment provided by engineer. */
+"Send" = "Отправить";
+
+/* No comment provided by engineer. */
+"Send to Computer" = "Отправить на Computer";
+
+/* No comment provided by engineer. */
+"Send to %@" = "Отправить в %@";
+
+/* No comment provided by engineer. */
+"Send to iPhone or iPad" = "Отправить на iPhone/iPad";
+
+/* No comment provided by engineer. */
+"Sending Photos" = "Отправка фотографий";
+
+/* No comment provided by engineer. */
+"Sending photos to %@. This might take up to few minutes." = "Отправка фотографий на %@. Это может занять несколько минут";
+
+/* No comment provided by engineer. */
+"Transferring photos to %@. This might take up to few minutes." = "Отправка фотографий в %@. Это может занять несколько минут.";
+
+/* No comment provided by engineer. */
+"Share This App" = "Рассказать о приложении";
+
+/* No comment provided by engineer. */
+"Share via Email" = "Рассказать через Email";
+
+/* No comment provided by engineer. */
+"Share via Facebook" = "Рассказать через Facebook";
+
+/* No comment provided by engineer. */
+"Share via Twitter" = "Рассказать через Twitter";
+
+/* No comment provided by engineer. */
+"Support" = "Техническая поддержка";
+
+/* No comment provided by engineer. */
+"There are no email accounts configured. You can add or create email account in the Settings app." = "E-mail аккаунт не настроен. Вы можете создать или добавить e-mail аккунт в Настройках устройства.";
+
+/* No comment provided by engineer. */
+"There are no Facebook accounts configured. You can add or create a Facebook account in the Settings app." = "Facebook аккаунт не настроен. Вы можете создать или добавить e-mail аккунт в Настройках устройства.";
+
+/* No comment provided by engineer. */
+"There are no Twitter accounts configured. You can add or create a Twitter account in the Settings app." = "Twitter аккаунт не настроен. Вы можете создать или добавить e-mail аккунт в Настройках устройства.";
+
+/* No comment provided by engineer. */
+"This email is not valid" = "Не верный e-mail";
+
+/* No comment provided by engineer. */
+"Troubleshooting" = "Советы";
+
+/* No comment provided by engineer. */
+"Where would you like to send photos to?" = "Куда вы хотите отправить фотографии?";
+
+/* button */
+"Yes" = "Да";
+
+/* Albums */
+"Albums" = "Albums";
+
+/* Aw, Snap! - data transfer was canceled */
+"Aw, Snap!" = "Aw, Snap!";
+
+/* Do you want to launch it? */
+"Do you want to launch it?" = "Хотите запустить его?";
+
+/* Done */
+"Done" = "Готово";
+
+/* Image Transfer allows you to send only photos */
+"Image Transfer allows you to send only photos" = "Image Transfer позволяет отправлять только фотографии";
+
+/* Image Transfer allows you to send up to 5 photos at a time for free */
+"Image Transfer allows you to send up to 5 photos at a time for free" = "Image Transfer позволяет отправлять только до 5 фотографий бесплатно за один раз";
+
+/* Image Transfer, the easiest and fastest way to send and receive photos on your iPhone */
+"Image Transfer, the easiest and fastest way to send and receive photos on your iPhone" = "Image Transfer - самый простой и быстрый способ отправить фотографии на ваш iPhone";
+
+/* Push notification */
+"Hury up! Go back to Image Transfer to continue data transfer!" = "Поторопитесь! Откройте Image Transfer, чтобы передача файлов продолжилась";
+
+/* Button in alert */
+"Launch Now" = "Запустить";
+
+/* Button in alert */
+"No, Thanks" = "Нет, спасибо";
+
+/* Not connected to Wi-Fi */
+"Not connected to Wi-Fi" = "Нет подключения к Wi-Fi";
+
+/* Open */
+"Open" = "Открыть";
+
+/* Receive */
+"Receive" = "Принять";
+
+/* Receive Photos */
+"Receive Photos" = "Принять фотографии";
+
+/* Send 5 photos */
+"Send 5 photos" = "Отправить 5 фото";
+
+/* Send only photos */
+"Send only photos" = "Отправить только фото";
+
+/* Transferring was canceled. Image Transfer app must be running while transferring on both devices. */
+"Transferring was canceled. %@ app must be running while transferring on both devices." = "Передача была отменена. %@ должен быть запущен на обоих устройствах во время передачи.";
+
+/* Want to send unlimited photos and videos? */
+"Want to send unlimited photos and videos?" = "Отправляйте неограниченное количество фото и видео";
+
+/* Want to send unlimited photos? */
+"Want to send unlimited photos?" = "Отправляйте неограниченное количество фото";
+
+/* Want to send unlimited videos? */
+"Want to send unlimited videos?" = "Отправляйте неограниченное количество видео?";
+
+/* You have ImageTrasnfer Plus installed. */
+"You have ImageTrasnfer Plus installed." = "ImageTrasnfer Plus уже установлен.";
+
+/* Restore purchases button title */
+"Restore purchases" = "Восстановить покупки";
+
+/* Limited transfer button title */
+"Limited transfer" = "Оставить ограничения";

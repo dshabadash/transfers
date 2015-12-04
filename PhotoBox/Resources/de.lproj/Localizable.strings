@@ -1,0 +1,278 @@
+/* 
+  Localizable.strings
+  PhotoBox
+
+  Created by Viacheslav Savchenko on 4/16/13.
+  Copyright (c) 2013 CapableBits. All rights reserved.
+*/
+
+/* No comment provided by engineer. */
+"Back" = "Zurück";
+
+/* button */
+"Cancel" = "Abbrechen";
+
+/* No comment provided by engineer. */
+"Cannot connect to iTunes Store" = "Kann keine Verbindung zum iTunes Store herstellen";
+
+/* No comment provided by engineer. */
+"Choose photos to send" = "Suche Fotos zum Versenden aus";
+
+/* No comment provided by engineer. */
+"Close" = "Schließen";
+
+/* No comment provided by engineer. */
+"Computer" = "Computer";
+
+/* No comment provided by engineer. */
+"computer" = "computer";
+
+/* No comment provided by engineer. */
+"Failed to register: something went wrong." = "Registrierung fehlgeschlagen: etwas ist schief gelaufen.";
+
+/* No comment provided by engineer. */
+"Help" = "Hilfe";
+
+/* No comment provided by engineer. */
+"Image Transfer" = "Image Transfer";
+
+/* No comment provided by engineer. */
+"Launch Image Transfer on receiving device and pick it from the list" = "Starte Image Transfer am Empfangsgerät und wähle es aus der Liste aus";
+
+/* No comment provided by engineer. */
+"Legal Notes" = "Rechtliche Hinweise";
+
+/* No comment provided by engineer. */
+"Looking for devices" = "Suche nach Geräten";
+
+/* button */
+"No" = "Nein";
+
+/* No comment provided by engineer. */
+"No email account" = "Kein E-Mail-Konto";
+
+/* No comment provided by engineer. */
+"No Facebook account" = "Kein Facebook-Konto";
+
+/* No comment provided by engineer. */
+"No Twitter account" = "Kein Twitter-Konto";
+
+/* button
+ OK */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Oops!" = "Ups!";
+
+/* Password */
+"Password" = "Passwort";
+
+/* No comment provided by engineer. */
+"Photos were successfully received from %@, and saved to %@ album." = "Fotos wurden erfolgreich von %1$@ empfangen und im Album %2$@ abgespeichert.";
+
+/* No comment provided by engineer. */
+"Photos were successfully received. Importing..." = "Fotos wurden erfolgreich empfangen. Importiere...";
+
+/* No comment provided by engineer. */
+"Photos were successfully sent to %@." = "Fotos wurden erfolgreich an %@ versendet.";
+
+/* No comment provided by engineer. */
+"Rate This App" = "Bewerte die App";
+
+/* No comment provided by engineer. */
+"Receiving Photos" = "Empfange Fotos";
+
+/* No comment provided by engineer. */
+"Receiving photos from %@. This might take up to few minutes." = "Empfange Fotos von %@. Dies könnte einige Minuten dauern.";
+
+/* No comment provided by engineer. */
+"Register" = "Registrieren";
+
+/* No comment provided by engineer. */
+"Register Image Transfer" = "Registriere Image Transfer";
+
+/* No comment provided by engineer. */
+"Saving failed: %@\n%@" = "Speichern fehlgeschlagen: %1$@\n%2$@";
+
+/* No comment provided by engineer. */
+"Send" = "Senden";
+
+/* No comment provided by engineer. */
+"Send to Computer" = "An Computer senden";
+
+/* No comment provided by engineer. */
+"Send to iPhone or iPad" = "An iPhone oder iPad senden";
+
+/* No comment provided by engineer. */
+"Sending Photos" = "Sende Fotos";
+
+/* No comment provided by engineer. */
+"Sending photos to %@. This might take up to few minutes." = "Sende Fotos an %@. Dies könnte einige Minuten dauern.";
+
+/* No comment provided by engineer. */
+"Share This App" = "Teile diese App";
+
+/* No comment provided by engineer. */
+"Share via Email" = "Teile per E-Mail";
+
+/* No comment provided by engineer. */
+"Share via Facebook" = "Teile auf Facebook";
+
+/* No comment provided by engineer. */
+"Share via Twitter" = "Teile auf Twitter";
+
+/* No comment provided by engineer. */
+"Support" = "Support";
+
+/* No comment provided by engineer. */
+"There are no email accounts configured. You can add or create email account in the Settings app." = "Es wurde kein E-Mail-Konto eingerichtet. Du kannst ein E-Mail-Konto in den iOS-Einstellungen hinzufügen oder erstellen.";
+
+/* No comment provided by engineer. */
+"There are no Facebook accounts configured. You can add or create a Facebook account in the Settings app." = "Es wurde kein Facebook-Konto eingerichtet. Du kannst ein Facebook-Konto in den iOS-Einstellungen hinzufügen oder erstellen.";
+
+/* No comment provided by engineer. */
+"There are no Twitter accounts configured. You can add or create a Twitter account in the Settings app." = "Es wurde kein Twitter-Konto eingerichtet. Du kannst ein Twitter-Konto in den iOS-Einstellungen hinzufügen oder erstellen.";
+
+/* No comment provided by engineer. */
+"This email is not valid" = "Diese E-Mail-Adresse ist ungültig";
+
+/* No comment provided by engineer. */
+"Troubleshooting" = "Problemlösung";
+
+/* No comment provided by engineer. */
+"Where would you like to send photos to?" = "Wo würdest du die Fotos gerne hinsenden?";
+
+/* button */
+"Yes" = "Ja";
+
+/* Albums */
+"Albums" = "Alben";
+
+/* Aw, Snap! - data transfer was canceled */
+"Aw, Snap!" = "Ach, schade!";
+
+/* Do you want to launch it? */
+"Do you want to launch it?" = "Willst du es ausführen?";
+
+/* Done */
+"Done" = "Fertig";
+
+/* Image Transfer allows you to send only photos */
+"Image Transfer allows you to send only photos" = "Image Transfer erlaubt es dir nur Fotos zu versenden";
+
+/* Image Transfer allows you to send up to 5 photos at a time for free */
+"Image Transfer allows you to send up to 5 photos at a time for free" = "Image Transfer erlaubt es dir bis zu 5 Fotos auf einmal kostenlos zu versenden";
+
+/* Image Transfer, the easiest and fastest way to send and receive photos on your iPhone */
+"Image Transfer, the easiest and fastest way to send and receive photos on your iPhone" = "Image Transfer, der einfachste und schnellste Weg Fotos auf dein iPhone zu erhalten und von diesem aus zu versenden";
+
+/* ImageTransfer is about to be shut down */
+"ImageTransfer is about to be shut down" = "Image Transfer wird in Kürze beendet";
+
+/* Push notification text */
+"Hury up! Go back to Image Transfer to continue data transfer!" = "Schnell! Öffne Image Transfer, um den Datentransfer fortzusetzen!";
+
+/* No, Thanks */
+"No, Thanks" = "Nein, danke";
+
+/* Not connected to Wi-Fi */
+"Not connected to Wi-Fi" = "Nicht mit dem WLAN verbunden";
+
+/* Open */
+"Open" = "Öffnen";
+
+/* Receive */
+"Receive" = "Empfangen";
+
+/* Receive Photos */
+"Receive Photos" = "Fotos empfangen";
+
+/* Send 5 photos */
+"Send 5 photos" = "5 Fotos versenden";
+
+/* Send only photos */
+"Send only photos" = "Nur Fotos zu versenden";
+
+/* Transferring was canceled. Image Transfer app must be running while transferring on both devices. */
+"Transferring was canceled. %@ app must be running while transferring on both devices." = "Der Transfer wurde abgebrochen. %@ muss während dem Transfer auf beiden Geräten laufen.";
+
+/* Want to send unlimited photos and videos? */
+"Want to send unlimited photos and videos?" = "Willst du unendlich viele Fotos und Videos versenden?";
+
+/* Want to send unlimited photos? */
+"Want to send unlimited photos?" = "Willst du unendlich viele Fotos versenden?";
+
+/* Want to send unlimited videos? */
+"Want to send unlimited videos?" = "Willst du unendlich viele Videos versenden?";
+
+/* You have ImageTrasnfer Plus installed. */
+"You have ImageTrasnfer Plus installed." = "Du hast Image Transfer Plus installiert.";
+
+/* Albums */
+"Albums" = "Alben";
+
+/* Aw, Snap! - data transfer was canceled */
+"Aw, Snap!" = "Ach, schade!";
+
+/* Do you want to launch it? */
+"Do you want to launch it?" = "Willst du es ausführen?";
+
+/* Done */
+"Done" = "Fertig";
+
+/* Image Transfer allows you to send only photos */
+"Image Transfer allows you to send only photos" = "Image Transfer erlaubt es dir nur Fotos zu versenden";
+
+/* Image Transfer allows you to send up to 5 photos at a time for free */
+"Image Transfer allows you to send up to 5 photos at a time for free" = "Image Transfer erlaubt es dir bis zu 5 Fotos auf einmal kostenlos zu versenden";
+
+/* Image Transfer, the easiest and fastest way to send and receive photos on your iPhone */
+"Image Transfer, the easiest and fastest way to send and receive photos on your iPhone" = "Image Transfer, der einfachste und schnellste Weg Fotos auf dein iPhone zu erhalten und von diesem aus zu versenden";
+
+/* ImageTransfer is about to be shut down */
+"ImageTransfer is about to be shut down" = "Image Transfer wird in Kürze beendet";
+
+/* Push notification text */
+"Hury up! Go back to Image Transfer to continue data transfer!" = "Schnell! Öffne Image Transfer, um den Datentransfer fortzusetzen!";
+
+/* No, Thanks */
+"No, Thanks" = "Nein, danke";
+
+/* Not connected to Wi-Fi */
+"Not connected to Wi-Fi" = "Nicht mit dem WLAN verbunden";
+
+/* Open */
+"Open" = "Öffnen";
+
+/* Receive */
+"Receive" = "Empfangen";
+
+/* Receive Photos */
+"Receive Photos" = "Fotos empfangen";
+
+/* Send 5 photos */
+"Send 5 photos" = "5 Fotos versenden";
+
+/* Send only photos */
+"Send only photos" = "Nur Fotos zu versenden";
+
+/* Transferring was canceled. Image Transfer app must be running while transferring on both devices. */
+"Transferring was canceled. %@ app must be running while transferring on both devices." = "Der Transfer wurde abgebrochen. %@ muss während dem Transfer auf beiden Geräten laufen.";
+
+/* Want to send unlimited photos and videos? */
+"Want to send unlimited photos and videos?" = "Willst du unendlich viele Fotos und Videos versenden?";
+
+/* Want to send unlimited photos? */
+"Want to send unlimited photos?" = "Willst du unendlich viele Fotos versenden?";
+
+/* Want to send unlimited videos? */
+"Want to send unlimited videos?" = "Willst du unendlich viele Videos versenden?";
+
+/* You have ImageTrasnfer Plus installed. */
+"You have ImageTrasnfer Plus installed." = "Du hast Image Transfer Plus installiert.";
+
+/* Restore purchases button title */
+"Restore purchases" = "Wiederherstellen Käufe";
+
+/* Limited transfer button title */
+"Limited transfer" = "Übertragungbegrenzung";

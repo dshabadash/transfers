@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--Transfer-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller title="Transfer" backgroundImage="Default.png" id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <label width="135" height="93" alignment="left" text="Test" textAlignment="center" numberOfLines="3" id="wXb-0d-gqn">
+                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <button width="1" alignment="left" title="Send" id="C4G-v8-V3D">
+                            <connections>
+                                <action selector="sendButtonTapped" destination="AgC-eL-Hgc" id="CKI-2p-NY9"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="infoLabel" destination="wXb-0d-gqn" id="nHj-fC-6EB"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="232" y="346"/>
+        </scene>
+        <!--Send to ...-->
+        <scene sceneID="tOP-Ji-6Xy">
+            <objects>
+                <controller identifier="CloudMenuInterfaceController" title="Send to ..." backgroundImage="Default.png" id="mvp-Ca-0mp" customClass="PBSendToInterfaceController">
+                    <items>
+                        <button width="1" alignment="left" title="Dropbox" id="GiS-i6-Zqf">
+                            <connections>
+                                <action selector="sendToDropbox" destination="mvp-Ca-0mp" id="tS2-S3-lRD"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Flickr" id="QXr-GG-UOR">
+                            <connections>
+                                <action selector="sendToFlickr" destination="mvp-Ca-0mp" id="34d-ej-YiW"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="GoogleDrive" id="0Tf-uf-aT1">
+                            <connections>
+                                <action selector="sendToGoogleDrive" destination="mvp-Ca-0mp" id="71P-Uj-zkv"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Cancel" id="ObH-WO-V4N">
+                            <connections>
+                                <action selector="cancelSend" destination="mvp-Ca-0mp" id="f6c-wk-2RJ"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="406" y="346"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

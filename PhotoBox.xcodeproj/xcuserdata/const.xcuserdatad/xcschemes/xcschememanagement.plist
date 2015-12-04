@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>ImageTransfer.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>ImageTransferPlus WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
+		<key>ImageTransferPlus.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>Notification - ImageTransferPlus WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
+		<key>VideoTransfer.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>VideoTransferPlus.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>248D262B173005C400D6A11B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>248D27CB1730078700D6A11B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>490457AC1651515600486620</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4965A6731680C0C800071A66</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CFB96EDE1B17261F001F77D2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,73 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, del, dfn, em, img, ins, kbd, q, samp, small, strong, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, footer, header, nav, section 
+{
+	background: #FAF4ED;
+	color: #505050;	
+}
+
+html {
+	padding: 10px;
+}
+
+body {
+	font-family: "Helvetica";
+	margin-left: 0px;
+}
+
+ul {
+	padding-left: 20px;
+	padding-right: 0px;
+}
+
+li {
+	margin-top: 20px;
+}
+
+a:link {color:#615E57;}      /* unvisited link */
+a:visited {color:#615E57;}  /* visited link */
+a:hover {color:#615E57;}  /* mouse over link */
+a:active {color:#615E57;}
+
+.illustration {
+	margin:16px 0px;
+}
+
+.step {
+	text-align: center;
+	margin-top: 16px;
+/* 	margin-bottom: 20px; */
+}
+
+.path {
+	text-align: center;
+	margin-top: 16px;
+	font-size: 14px;
+}
+
+
+/* iPad overrides */
+@media only screen and (min-width: 768px), only screen and (min-device-width: 768px) {
+
+	html {
+		padding: 20px 30px 10px 30px;
+		font-size: 20px;
+	}
+	
+	h1 {
+		font-size: 30px;
+	}
+	
+	h3 {
+		font-size: 20px;
+	}
+	
+	.path {
+		font-size: 20px;
+		text-align: left;
+	}
+	
+	.step {
+		text-align: left;
+		margin-top: 26px;
+	}
+
+}

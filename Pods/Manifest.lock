@@ -1,0 +1,71 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - Google (1.2.1):
+    - Google/Core (= 1.2.1)
+  - Google-API-Client/Common (1.0.422):
+    - gtm-http-fetcher (~> 1.0.141)
+    - gtm-oauth2 (~> 1.0.125)
+  - Google-API-Client/Drive (1.0.422):
+    - Google-API-Client/Common
+    - gtm-http-fetcher (~> 1.0.141)
+    - gtm-oauth2 (~> 1.0.125)
+  - Google/Core (1.2.1):
+    - GoogleInterchangeUtilities (~> 1.0)
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
+    - GoogleUtilities (~> 1.1)
+  - GoogleInterchangeUtilities (1.1.0):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleNetworkingUtilities (1.0.0):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleSymbolUtilities (1.0.3)
+  - GoogleUtilities (1.1.0):
+    - GoogleSymbolUtilities (~> 1.0.0)
+  - gtm-http-fetcher (1.0.141)
+  - gtm-oauth2 (1.0.126):
+    - gtm-http-fetcher (~> 1.0.141)
+  - gtm-session-fetcher (1.0.21.1)
+  - SBJson (4.0.2)
+
+DEPENDENCIES:
+  - AFNetworking
+  - Google
+  - Google-API-Client/Drive (~> 1.0)
+  - gtm-oauth2
+  - gtm-session-fetcher
+  - SBJson
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Google: fd33b5fa40fa3aaee5176de49c873a74e3d11dce
+  Google-API-Client: cb712cf122f1d7fda966de4c2bc551324573366c
+  GoogleInterchangeUtilities: d7f7174176fbcf9710f696f1acebad4dbd98ac03
+  GoogleNetworkingUtilities: 292992ab31b7b4ba32809a0e8b40e324cdfb2c0c
+  GoogleSymbolUtilities: 82ad9f93d3615244b3f4ce440f5ab2515e8b4f56
+  GoogleUtilities: 8ed9134debe11719097881711464752900668f10
+  gtm-http-fetcher: 6d4617e7d343b6e4c082b777541c334eb6f5d81e
+  gtm-oauth2: 2a18b824e4f8a02df6cfe987beb59ae9d9697f9d
+  gtm-session-fetcher: 9e0371742dafb95630a9d4edefd9948755b6a7d4
+  SBJson: c18691cc18375b14664ff0fec841f8c4faef1934
+
+COCOAPODS: 0.39.0

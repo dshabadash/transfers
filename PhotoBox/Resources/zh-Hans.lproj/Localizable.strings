@@ -1,0 +1,215 @@
+/* 
+  Localizable.strings
+  PhotoBox
+
+  Created by Viacheslav Savchenko on 4/16/13.
+  Copyright (c) 2013 CapableBits. All rights reserved.
+*/
+
+/* No comment provided by engineer. */
+"Back" = "返回";
+
+/* button */
+"Cancel" = "取消";
+
+/* No comment provided by engineer. */
+"Cannot connect to iTunes Store" = "无法连接至 iTunes Store";
+
+/* No comment provided by engineer. */
+"Choose photos to send" = "选择要发送的照片";
+
+/* No comment provided by engineer. */
+"Close" = "关闭";
+
+/* No comment provided by engineer. */
+"Computer" = "电脑";
+
+/* No comment provided by engineer. */
+"computer" = "电脑";
+
+/* No comment provided by engineer. */
+"Failed to register: something went wrong." = "注册失败：发生错误。";
+
+/* No comment provided by engineer. */
+"Help" = "帮助";
+
+/* No comment provided by engineer. */
+"Image Transfer" = "Image Transfer";
+
+/* No comment provided by engineer. */
+"Launch Image Transfer on receiving device and pick it from the list" = "在接收设备中启动 Image Transfer，并从列表中选择";
+
+/* No comment provided by engineer. */
+"Legal Notes" = "法律声明";
+
+/* No comment provided by engineer. */
+"Looking for devices" = "正在查找设备";
+
+/* button */
+"No" = "否";
+
+/* No comment provided by engineer. */
+"No email account" = "无电子邮件帐户";
+
+/* No comment provided by engineer. */
+"No Facebook account" = "无 Facebook 帐户";
+
+/* No comment provided by engineer. */
+"No Twitter account" = "无 Twitter 帐户";
+
+/* button
+ OK */
+"OK" = "好";
+
+/* No comment provided by engineer. */
+"Oops!" = "糟糕！";
+
+/* Password */
+"Password" = "密码";
+
+/* No comment provided by engineer. */
+"Photos were successfully received from %@, and saved to %@ album." = "成功从 %1$@ 接收照片，并保存至 %2$@ 相簿。";
+
+/* No comment provided by engineer. */
+"Photos were successfully received. Importing..." = "照片成功接收。正在导入...";
+
+/* No comment provided by engineer. */
+"Photos were successfully sent to %@." = "照片已成功发送至 %@。";
+
+/* No comment provided by engineer. */
+"Rate This App" = "评价此应用程序";
+
+/* No comment provided by engineer. */
+"Receiving Photos" = "正在接收照片";
+
+/* No comment provided by engineer. */
+"Receiving photos from %@. This might take up to few minutes." = "正在从 %@ 接收照片，这可能需要几分钟时间。";
+
+/* No comment provided by engineer. */
+"Register" = "注册";
+
+/* No comment provided by engineer. */
+"Register Image Transfer" = "注册 Image Transfer";
+
+/* No comment provided by engineer. */
+"Saving failed: %@\n%@" = "保存失败：%1$@\n%2$@";
+
+/* No comment provided by engineer. */
+"Send" = "发送";
+
+/* No comment provided by engineer. */
+"Send to Computer" = "发送至电脑";
+
+/* No comment provided by engineer. */
+"Send to iPhone or iPad" = "发送至 iPhone 或 iPad";
+
+/* No comment provided by engineer. */
+"Sending Photos" = "正在发送照片";
+
+/* No comment provided by engineer. */
+"Sending photos to %@. This might take up to few minutes." = "正在发送照片至 %@，这可能需要几分钟时间。";
+
+/* No comment provided by engineer. */
+"Share This App" = "分享此应用程序";
+
+/* No comment provided by engineer. */
+"Share via Email" = "通过电子邮件分享";
+
+/* No comment provided by engineer. */
+"Share via Facebook" = "通过 Facebook 分享";
+
+/* No comment provided by engineer. */
+"Share via Twitter" = "通过 Twitter 分享";
+
+/* No comment provided by engineer. */
+"Support" = "支持";
+
+/* No comment provided by engineer. */
+"There are no email accounts configured. You can add or create email account in the Settings app." = "未配置电子邮件帐户。你可以在“设置”应用程序中添加或创建电子邮件帐户。";
+
+/* No comment provided by engineer. */
+"There are no Facebook accounts configured. You can add or create a Facebook account in the Settings app." = "未配置 Facebook 帐户。你可以在“设置”应用程序中添加或创建 Facebook 帐户。";
+
+/* No comment provided by engineer. */
+"There are no Twitter accounts configured. You can add or create a Twitter account in the Settings app." = "未配置 Twitter 帐户。你可以在“设置”应用程序中添加或创建 Twitter 帐户。";
+
+/* No comment provided by engineer. */
+"This email is not valid" = "该电子邮件地址无效";
+
+/* No comment provided by engineer. */
+"Troubleshooting" = "疑难解答";
+
+/* No comment provided by engineer. */
+"Where would you like to send photos to?" = "你想将照片发送至哪里？";
+
+/* button */
+"Yes" = "是";
+
+/* Albums */
+"Albums" = "相簿";
+
+/* Aw, Snap! - data transfer was canceled */
+"Aw, Snap!" = "呃，糟糕！";
+
+/* Do you want to launch it? */
+"Do you want to launch it?" = "是否启动？";
+
+/* Done */
+"Done" = "完成";
+
+/* Image Transfer allows you to send only photos */
+"Image Transfer allows you to send only photos" = "Image Transfer 仅允许发送照片";
+
+/* Image Transfer allows you to send up to 5 photos at a time for free */
+"Image Transfer allows you to send up to 5 photos at a time for free" = "Image Transfer 允许每次免费发送最多 5 张照片";
+
+/* Image Transfer, the easiest and fastest way to send and receive photos on your iPhone */
+"Image Transfer, the easiest and fastest way to send and receive photos on your iPhone" = "Image Transfer 是 iPhone 发送和接收照片最简单最快速的方式";
+
+/* Push notification */
+"Hury up! Go back to Image Transfer to continue data transfer!" = "快点儿！返回 Image Transfer 继续传输数哦！";
+
+/* Button in alert */
+"Launch Now" = "立即启动";
+
+/* Button in alert */
+"No, Thanks" = "不，谢谢";
+
+/* Not connected to Wi-Fi */
+"Not connected to Wi-Fi" = "未连接至 Wi-Fi";
+
+/* Open */
+"Open" = "打开";
+
+/* Receive */
+"Receive" = "接收";
+
+/* Receive Photos */
+"Receive Photos" = "接收照片";
+
+/* Send 5 photos */
+"Send 5 photos" = "发送 5 张照片";
+
+/* Send only photos */
+"Send only photos" = "仅发送照片";
+
+/* Transferring was canceled. Image Transfer app must be running while transferring on both devices. */
+"Transferring was canceled. %@ app must be running while transferring on both devices." = "传输已取消。传输数据时 %@ 应用程序必须同时在双方设备上运行。";
+
+/* Want to send unlimited photos and videos? */
+"Want to send unlimited photos and videos?" = "想发送数量不限的照片和视频？";
+
+/* Want to send unlimited photos? */
+"Want to send unlimited photos?" = "想发送数量不限的照片？";
+
+/* Want to send unlimited videos? */
+"Want to send unlimited videos?" = "想发送数量不限的视频？";
+
+/* You have ImageTrasnfer Plus installed. */
+"You have ImageTrasnfer Plus installed." = "你已安装了 ImageTrasnfer Plus。";
+
+/* Restore purchases button title */
+"Restore purchases" = "恢复采购";
+
+/* Limited transfer button title */
+"Limited transfer" = "转移有限";
