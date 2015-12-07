@@ -10,7 +10,7 @@
 
 @protocol PBActionSheetDelegate;
 
-@interface PBActionSheet : UIActionSheet<UIActionSheetDelegate> {
+@interface PBActionSheet : UIAlertController {
 	id                                  userInfo;
 	NSMutableArray                      *selectorsArray;
 	NSObject<PBActionSheetDelegate>     *pbActionSheetDelegate;

@@ -1497,13 +1497,13 @@ static void PSTCollectionViewCommonSetup(PSTCollectionView *_self) {
     
     for(PSTCollectionViewUpdateItem *updateItem in sortedMutableReloadItems) {
         NSAssert(updateItem.indexPathBeforeUpdate.section< [oldCollectionViewData numberOfSections],
-                 @"attempt to reload item (%@) that doesn't exist (there are only %ldd sections before update)",
-                 updateItem.indexPathBeforeUpdate, (long)[oldCollectionViewData numberOfSections]);
+                 @"attempt to reload item (%@) that doesn't exist (there are only %d sections before update)",
+                 updateItem.indexPathBeforeUpdate, [oldCollectionViewData numberOfSections]);
         NSAssert(updateItem.indexPathBeforeUpdate.item<[oldCollectionViewData numberOfItemsInSection:updateItem.indexPathBeforeUpdate.section],
-                 @"attempt to reload item (%@) that doesn't exist (there are only %ld items in section %ld before udpate)",
+                 @"attempt to reload item (%@) that doesn't exist (there are only %d items in section %d before udpate)",
                  updateItem.indexPathBeforeUpdate,
-                 (long)[oldCollectionViewData numberOfItemsInSection:updateItem.indexPathBeforeUpdate.section],
-                 (long)updateItem.indexPathBeforeUpdate.section);
+                 [oldCollectionViewData numberOfItemsInSection:updateItem.indexPathBeforeUpdate.section],
+                 updateItem.indexPathBeforeUpdate.section);
         
         [someMutableArr2 addObject:[[PSTCollectionViewUpdateItem alloc] initWithAction:PSTCollectionUpdateActionDelete
                                                                           forIndexPath:updateItem.indexPathBeforeUpdate]];
@@ -1517,23 +1517,23 @@ static void PSTCollectionViewCommonSetup(PSTCollectionView *_self) {
     for(PSTCollectionViewUpdateItem *deleteItem in sortedDeletedMutableItems) {
         if([deleteItem isSectionOperation]) {
             NSAssert(deleteItem.indexPathBeforeUpdate.section<[oldCollectionViewData numberOfSections],
-                     @"attempt to delete section (%ld) that doesn't exist (there are only %ld sections before update)",
-                     (long)deleteItem.indexPathBeforeUpdate.section,
-                     (long)[oldCollectionViewData numberOfSections]);
+                     @"attempt to delete section (%d) that doesn't exist (there are only %d sections before update)",
+                     deleteItem.indexPathBeforeUpdate.section,
+                     [oldCollectionViewData numberOfSections]);
             
             for(PSTCollectionViewUpdateItem *moveItem in sortedMutableMoveItems) {
                 if(moveItem.indexPathBeforeUpdate.section == deleteItem.indexPathBeforeUpdate.section) {
                     if(moveItem.isSectionOperation)
-                        NSAssert(NO, @"attempt to delete and move from the same section %ld", (long)deleteItem.indexPathBeforeUpdate.section);
+                        NSAssert(NO, @"attempt to delete and move from the same section %d", deleteItem.indexPathBeforeUpdate.section);
                     else
                         NSAssert(NO, @"attempt to delete and move from the same section (%@)", moveItem.indexPathBeforeUpdate);
                 }
             }
         } else {
             NSAssert(deleteItem.indexPathBeforeUpdate.section<[oldCollectionViewData numberOfSections],
-                     @"attempt to delete item (%@) that doesn't exist (there are only %ld sections before update)",
+                     @"attempt to delete item (%@) that doesn't exist (there are only %d sections before update)",
                      deleteItem.indexPathBeforeUpdate,
-                     (long)[oldCollectionViewData numberOfSections]);
+                     [oldCollectionViewData numberOfSections]);
             NSAssert(deleteItem.indexPathBeforeUpdate.item<[oldCollectionViewData numberOfItemsInSection:deleteItem.indexPathBeforeUpdate.section],
                      @"attempt to delete item (%@) that doesn't exist (there are only %ld items in section %ld before update)",
                      deleteItem.indexPathBeforeUpdate,
@@ -1560,13 +1560,13 @@ static void PSTCollectionViewCommonSetup(PSTCollectionView *_self) {
         BOOL sectionOperation = [insertItem isSectionOperation];
         if(sectionOperation) {
             NSAssert([indexPath section]<[_collectionViewData numberOfSections],
-                     @"attempt to insert %ld but there are only %ld sections after update",
-                     (long)[indexPath section], (long)[_collectionViewData numberOfSections]);
+                     @"attempt to insert %d but there are only %d sections after update",
+                     [indexPath section], [_collectionViewData numberOfSections]);
             
             for(PSTCollectionViewUpdateItem *moveItem in sortedMutableMoveItems) {
                 if([moveItem.indexPathAfterUpdate isEqual:indexPath]) {
                     if(moveItem.isSectionOperation)
-                        NSAssert(NO, @"attempt to perform an insert and a move to the same section (%ld)",(long)indexPath.section);
+                        NSAssert(NO, @"attempt to perform an insert and a move to the same section (%d)",indexPath.section);
                     //                    else
                     //                        NSAssert(NO, @"attempt to perform an insert and a move to the same index path (%@)",indexPath);
                 }
@@ -1578,20 +1578,20 @@ static void PSTCollectionViewCommonSetup(PSTCollectionView *_self) {
                 
                 if(nextInsertItem.indexPathAfterUpdate.section == indexPath.section) {
                     NSAssert(nextInsertItem.indexPathAfterUpdate.item<[_collectionViewData numberOfItemsInSection:indexPath.section],
-                             @"attempt to insert item %ld into section %ld, but there are only %ld items in section %ld after the update",
+                             @"attempt to insert item %ld into section %d, but there are only %d items in section %d after the update",
                              (long)nextInsertItem.indexPathAfterUpdate.item,
-                             (long)indexPath.section,
-                             (long)[_collectionViewData numberOfItemsInSection:indexPath.section],
-                             (long)indexPath.section);
+                             indexPath.section,
+                             [_collectionViewData numberOfItemsInSection:indexPath.section],
+                             indexPath.section);
                     [sortedInsertMutableItems removeObjectAtIndex:j];
                 }
                 else break;
             }
         } else {
             NSAssert(indexPath.item< [_collectionViewData numberOfItemsInSection:indexPath.section],
-                     @"attempt to insert item to (%@) but there are only %ld items in section %ld after update",
+                     @"attempt to insert item to (%@) but there are only %d items in section %ld after update",
                      indexPath,
-                     (long)[_collectionViewData numberOfItemsInSection:indexPath.section],
+                     [_collectionViewData numberOfItemsInSection:indexPath.section],
                      (long)indexPath.section);
             
             if(!operations[@(indexPath.section)])
@@ -1605,32 +1605,32 @@ static void PSTCollectionViewCommonSetup(PSTCollectionView *_self) {
     for(PSTCollectionViewUpdateItem * sortedItem in sortedMutableMoveItems) {
         if(sortedItem.isSectionOperation) {
             NSAssert(sortedItem.indexPathBeforeUpdate.section<[oldCollectionViewData numberOfSections],
-                     @"attempt to move section (%ld) that doesn't exist (%ld sections before update)",
+                     @"attempt to move section (%ld) that doesn't exist (%d sections before update)",
                      (long)sortedItem.indexPathBeforeUpdate.section,
-                     (long)[oldCollectionViewData numberOfSections]);
+                     [oldCollectionViewData numberOfSections]);
             NSAssert(sortedItem.indexPathAfterUpdate.section<[_collectionViewData numberOfSections],
-                     @"attempt to move section to %ld but there are only %ld sections after update",
-                     (long)sortedItem.indexPathAfterUpdate.section,
-                     (long)[_collectionViewData numberOfSections]);
+                     @"attempt to move section to %d but there are only %d sections after update",
+                     sortedItem.indexPathAfterUpdate.section,
+                     [_collectionViewData numberOfSections]);
         } else {
             NSAssert(sortedItem.indexPathBeforeUpdate.section<[oldCollectionViewData numberOfSections],
-                     @"attempt to move item (%@) that doesn't exist (%ld sections before update)",
-                     sortedItem, (long)[oldCollectionViewData numberOfSections]);
+                     @"attempt to move item (%@) that doesn't exist (%d sections before update)",
+                     sortedItem, [oldCollectionViewData numberOfSections]);
             NSAssert(sortedItem.indexPathBeforeUpdate.item<[oldCollectionViewData numberOfItemsInSection:sortedItem.indexPathBeforeUpdate.section],
-                     @"attempt to move item (%@) that doesn't exist (%ld items in section %ld before update)",
+                     @"attempt to move item (%@) that doesn't exist (%d items in section %d before update)",
                      sortedItem,
-                     (long)[oldCollectionViewData numberOfItemsInSection:sortedItem.indexPathBeforeUpdate.section],
-                     (long)sortedItem.indexPathBeforeUpdate.section);
+                     [oldCollectionViewData numberOfItemsInSection:sortedItem.indexPathBeforeUpdate.section],
+                     sortedItem.indexPathBeforeUpdate.section);
             
             NSAssert(sortedItem.indexPathAfterUpdate.section<[_collectionViewData numberOfSections],
-                     @"attempt to move item to (%@) but there are only %ld sections after update",
+                     @"attempt to move item to (%@) but there are only %d sections after update",
                      sortedItem.indexPathAfterUpdate,
-                     (long)[_collectionViewData numberOfSections]);
+                     [_collectionViewData numberOfSections]);
             NSAssert(sortedItem.indexPathAfterUpdate.item<[_collectionViewData numberOfItemsInSection:sortedItem.indexPathAfterUpdate.section],
-                     @"attempt to move item to (%@) but there are only %ld items in section %ld after update",
+                     @"attempt to move item to (%@) but there are only %d items in section %d after update",
                      sortedItem,
-                     (long)[_collectionViewData numberOfItemsInSection:sortedItem.indexPathAfterUpdate.section],
-                     (long)sortedItem.indexPathAfterUpdate.section);
+                     [_collectionViewData numberOfItemsInSection:sortedItem.indexPathAfterUpdate.section],
+                     sortedItem.indexPathAfterUpdate.section);
         }
         
         if(!operations[@(sortedItem.indexPathBeforeUpdate.section)])
@@ -1656,12 +1656,12 @@ static void PSTCollectionViewCommonSetup(PSTCollectionView *_self) {
         
         NSAssert([oldCollectionViewData numberOfItemsInSection:section]+insertedCount-deletedCount+movedInCount-movedOutCount ==
                  [_collectionViewData numberOfItemsInSection:section],
-                 @"invalide update in section %ld: number of items after update (%ld) should be equal to the number of items before update (%ld) "\
-                 "plus count of inserted items (%ld), minus count of deleted items (%ld), plus count of items moved in (%ld), minus count of items moved out (%ld)",
-                 (long)section,
-                 (long)[_collectionViewData numberOfItemsInSection:section],
-                 (long)[oldCollectionViewData numberOfItemsInSection:section],
-                 (long)insertedCount,(long)deletedCount,(long)movedInCount, (long)movedOutCount);
+                 @"invalide update in section %d: number of items after update (%d) should be equal to the number of items before update (%d) "\
+                 "plus count of inserted items (%d), minus count of deleted items (%d), plus count of items moved in (%d), minus count of items moved out (%d)",
+                 section,
+                 [_collectionViewData numberOfItemsInSection:section],
+                 [oldCollectionViewData numberOfItemsInSection:section],
+                 insertedCount,deletedCount,movedInCount, movedOutCount);
     }
 #endif
     

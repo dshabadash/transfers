@@ -584,12 +584,9 @@ static NSString * const footerIdentifier = @"CollectionFooterView";
 - (PSTCollectionReusableView *)collectionView:(UICollectionView *)collectionView
     viewForSupplementaryElementOfKind:(NSString *)kind
     atIndexPath:(NSIndexPath *)indexPath {
-    
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:footerIdentifier
-                                                                           forIndexPath:indexPath];
-    
 
-    return ((PSTCollectionReusableView *)cell);
+    return (PSTCollectionReusableView *)[collectionView dequeueReusableCellWithReuseIdentifier:footerIdentifier
+                                                     forIndexPath:indexPath];
 }
 
 - (BOOL)isCellSelectedAtIndexPath:(NSIndexPath *)indexPath {

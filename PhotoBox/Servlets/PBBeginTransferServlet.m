@@ -54,9 +54,9 @@
     if (canStartNewTransfer) {
         
         // TODO: get rid of it
-        struct in_addr remote_ip = {(int)request.requestInfo->remote_ip};
+        struct in_addr remote_ip = {request.requestInfo->remote_ip};
         NSString *address = [PBBeginTransferServlet stringWithInAddr:remote_ip];
-        NSString *URLString = [NSString stringWithFormat:@"http://%@:%ld/", address, (long)PBGetServerPort()];
+        NSString *URLString = [NSString stringWithFormat:@"http://%@:%d/", address, PBGetServerPort()];
 
         NSString *deviceName = [request.headers objectForKey:@"X-Device-Name"];
 

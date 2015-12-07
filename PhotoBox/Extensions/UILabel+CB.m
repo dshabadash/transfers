@@ -14,7 +14,7 @@
     UIFont *font = self.font;
     NSString *text = self.text;
 
-    CGSize textSize = [text sizeWithAttributes: @{NSFontAttributeName: font}];
+    CGSize textSize = [text sizeWithAttributes:@{NSFontAttributeName: font}];
     return textSize;
 }
 

@@ -453,8 +453,7 @@ typedef enum {
         mesVC.messageComposeDelegate = self;
         
         NSShadow *shadow = [NSShadow new];
-        [shadow setShadowColor: [UIColor clearColor]];
-        
+        shadow.shadowColor = [UIColor clearColor];
         NSDictionary *titleAttributes = @{
                                           NSShadowAttributeName : shadow,
                                           NSForegroundColorAttributeName : [UIColor defaultTextColor]
@@ -486,8 +485,7 @@ typedef enum {
         mvc.mailComposeDelegate = self;
         
         NSShadow *shadow = [NSShadow new];
-        [shadow setShadowColor: [UIColor clearColor]];
-        
+        shadow.shadowColor = [UIColor clearColor];
         NSDictionary *titleAttributes = @{
                                           NSShadowAttributeName : shadow,
                                           NSForegroundColorAttributeName : [UIColor defaultTextColor]

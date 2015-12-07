@@ -626,10 +626,7 @@ static const NSTimeInterval RDUTrackerTransmitTimeResolution = 60;
 static NSString *RDUApplicationBinaryHash() {
     NSString *appBinaryPath = [NSBundle mainBundle].executablePath;
     
-    NSData *appContent = [[NSData alloc] initWithContentsOfURL:[[NSURL alloc] initWithString:appBinaryPath]
-                                                       options:NSDataReadingMappedIfSafe
-                                                         error:nil];
-
+    NSData *appContent = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:appBinaryPath] options:NSDataReadingMappedIfSafe error:nil];
     const char *bytes = (const char *)[appContent bytes];
     NSUInteger len = [appContent length];
     NSUInteger hashLen = 512*1024;
@@ -641,8 +638,8 @@ static NSString *RDUApplicationBinaryHash() {
     }
 
     uint32_t two32ints[2];
-    two32ints[0] = (int)len;
-    MurmurHash3_x86_32(bytes, (int)hashLen, 0xB0F57EE3, &two32ints[1]);
+    two32ints[0] = len;
+    MurmurHash3_x86_32(bytes, hashLen, 0xB0F57EE3, &two32ints[1]);
         
     [appContent release];
     
@@ -731,7 +728,7 @@ static NSString *RDUDeviceModelID() {
 
 static NSData *RDUSHA1DigestOfData(NSData *data) {
     unsigned char result[CC_SHA1_DIGEST_LENGTH];
-    CC_SHA1([data bytes], (int)[data length], result);
+    CC_SHA1([data bytes], [data length], result);
     return [NSData dataWithBytes:result length:CC_SHA1_DIGEST_LENGTH];
 }
 
@@ -831,7 +828,7 @@ static NSData *RDUDataXOR(NSData *data) {
     const int keyLength = 60;
 
     char *dataPtr = (char *) [data bytes];
-    NSUInteger dataLength = [data length];
+    int dataLength = [data length];
     
     char *result = (char *)malloc(dataLength);
 
@@ -893,7 +890,7 @@ static NSData *RDUDataXOR(NSData *data) {
     
     if (_postBodyData) {
         [request setHTTPBody:_postBodyData];    
-        [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[_postBodyData length]] forHTTPHeaderField:@"Content-Length"];
+        [request setValue:[NSString stringWithFormat:@"%u", [_postBodyData length]] forHTTPHeaderField:@"Content-Length"];
     }
     
     [NSURLConnection connectionWithRequest:request delegate:self];

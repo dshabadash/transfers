@@ -7,24 +7,22 @@
 //
 
 #import "PBGoogleDriveUploadingEngine.h"
-//#import "GTLDrive.h"
-#import "GTMOAuth2ViewControllerTouch.h"
 #import "GTLDrive.h"
 
 
 
 @interface PBGoogleDriveUploadingEngine ()
-/*
+
 @property (nonatomic, retain) GTLServiceDrive *driveService;
 @property (nonatomic, retain) NSString *destinationDirectoryName;
 @property (nonatomic, retain) GTLServiceTicket *uploadingTicket;
 @property (nonatomic, retain) NSString *parentFolderID;
-*/
+
 @end
 
 
 @implementation PBGoogleDriveUploadingEngine
-/*
+
 -(id)init {
     self = [super init];
     
@@ -38,11 +36,11 @@
     return self;
     
 }
-*/
+
 -(void)setAuthorizer:(id <GTMFetcherAuthorizationProtocol>)authorizer {
-  //  self.driveService.authorizer = authorizer;
+    self.driveService.authorizer = authorizer;
 }
-/*
+
 -(void)dealloc {
     [self.driveService release];
     [super dealloc];
@@ -117,7 +115,7 @@
     
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:sourceFilePath];
     GTLUploadParameters *uploadParameters = [GTLUploadParameters uploadParametersWithFileHandle:fileHandle
-                                                                                       MIMEType:nil];
+                                                                                       MIMEType:@"image"];
     GTLQueryDrive *query = [GTLQueryDrive queryForFilesInsertWithObject:file
                                                        uploadParameters:uploadParameters];
 
@@ -150,5 +148,5 @@
     }
     
 }
-*/
+
 @end

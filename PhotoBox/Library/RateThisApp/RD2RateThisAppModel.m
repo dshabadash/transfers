@@ -54,7 +54,7 @@
 - (void)checkForNewVersion {
 	lastUpgradeVersion = [[[NSUserDefaults standardUserDefaults] objectForKey:@"RTALastVersion"] unsignedIntValue];
         
-	UInt32 newVersion = (int)self.currentVersion;
+	UInt32 newVersion = self.currentVersion;
 
 	if (newVersion > lastUpgradeVersion) {
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

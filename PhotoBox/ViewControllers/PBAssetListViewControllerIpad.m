@@ -156,7 +156,7 @@
 #pragma mark - Actions
 
 - (void)cancel {
-    [PBActionSheet cancelAllActionSheets];
+ //   [PBActionSheet cancelAllActionSheets];
     [[PBRootViewController sharedController] presentStartCoverViewsAnimated:YES completion:^{
         PBAssetManager *assetManager = [PBAssetManager sharedManager];
         [assetManager cancelPreparingAssets];
@@ -166,7 +166,7 @@
 }
 
 - (void)albumsButtonTapped:(id)sender {
-    [PBActionSheet cancelAllActionSheets];
+  //  [PBActionSheet cancelAllActionSheets];
     
     if (_currentPopoverController) {
         [_currentPopoverController dismissPopoverAnimated:YES];

@@ -284,7 +284,7 @@ NSString * const kLSAppUpdateManagerLastStartedAppVersion = @"kLSAppUpdateManage
     else if([language isEqual:@"de"]){
         country = @"DE";
     }
-    else if([language isEqual:@"en"]){
+    else if([language isEqual:@"en-us"] || [language isEqual:@"en"]){
         country = @"US";
     }
     else{

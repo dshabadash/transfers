@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -36,58 +37,49 @@
                 <view contentMode="scaleToFill" verticalHuggingPriority="247" translatesAutoresizingMaskIntoConstraints="NO" id="2af-kk-q15" userLabel="View - Progress">
                     <rect key="frame" x="0.0" y="100" width="320" height="292"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="center" image="receive_screen_mac_or_pc_selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="wcp-Ld-p5R">
+                        <imageView userInteractionEnabled="NO" contentMode="center" misplaced="YES" image="receive_screen_mac_or_pc_selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="wcp-Ld-p5R">
                             <rect key="frame" x="186" y="5" width="83" height="81"/>
-                            <animations/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="center" image="receive_screen_iphone_selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="ucn-QY-Cq3">
                             <rect key="frame" x="37" y="5" width="83" height="81"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="83" id="YLc-N2-e6h"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="246" text="Dropbox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eP-AZ-YJa">
                             <rect key="frame" x="152" y="91" width="151" height="24"/>
-                            <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="iPhone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INY-HY-9Rp">
                             <rect key="frame" x="37" y="94" width="83" height="21"/>
-                            <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rz9-pj-zZU" customClass="PBProgressIndicator">
                             <rect key="frame" x="35" y="146" width="250" height="17"/>
-                            <animations/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fl2-e3-Gyt">
                             <rect key="frame" x="151" y="145" width="20" height="20"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="RkD-DL-iSm"/>
                             </constraints>
                         </activityIndicatorView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="265" translatesAutoresizingMaskIntoConstraints="NO" id="lTd-yB-gx9" userLabel="Transferring photos to Dropbox. This might take up to few minutes.">
                             <rect key="frame" x="8" y="180" width="304" height="41"/>
-                            <animations/>
                             <string key="text">Transferring photos to Dropbox.
 This might take up to few minutes.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5jD-rT-4jr">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5jD-rT-4jr">
                             <rect key="frame" x="137" y="23" width="24" height="43"/>
-                            <animations/>
                         </imageView>
                     </subviews>
-                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="5jD-rT-4jr" firstAttribute="leading" secondItem="ucn-QY-Cq3" secondAttribute="trailing" constant="17" id="4g3-gw-cEV"/>
@@ -123,7 +115,6 @@ This might take up to few minutes.</string>
                     <subviews>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1V-hV-NDn" userLabel="iMessageButton" customClass="PBStretchableBackgroundButton">
                             <rect key="frame" x="20" y="276" width="280" height="40"/>
-                            <animations/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <size key="titleShadowOffset" width="0.0" height="1"/>
                             <state key="normal" title="Send iMessage" backgroundImage="button_cancel.png">
@@ -139,15 +130,12 @@ This might take up to few minutes.</string>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="transfer_smile_iphone_tongue.png" translatesAutoresizingMaskIntoConstraints="NO" id="D5A-Vk-S3j">
                             <rect key="frame" x="93" y="0.0" width="135" height="135"/>
-                            <animations/>
                         </imageView>
                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3oi-Cm-PvU">
                             <rect key="frame" x="150" y="228" width="20" height="20"/>
-                            <animations/>
                         </activityIndicatorView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Photos were successfully sent to Dropbox. You can share link to uploaded folder." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="265" translatesAutoresizingMaskIntoConstraints="NO" id="4g9-df-7bT" customClass="TTTAttributedLabel">
                             <rect key="frame" x="8" y="143" width="304" height="85"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="85" id="yMH-SQ-acR"/>
                             </constraints>
@@ -157,7 +145,6 @@ This might take up to few minutes.</string>
                         </label>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itd-dR-O8j" userLabel="eMailButton" customClass="PBStretchableBackgroundButton">
                             <rect key="frame" x="20" y="324" width="280" height="40"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="CIF-Tj-az9"/>
                             </constraints>
@@ -176,7 +163,6 @@ This might take up to few minutes.</string>
                         </button>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GG-zI-Ayy" userLabel="linkCopyButton" customClass="PBStretchableBackgroundButton">
                             <rect key="frame" x="20" y="228" width="280" height="40"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="194" id="sd0-Rx-XdB"/>
                             </constraints>
@@ -200,10 +186,8 @@ This might take up to few minutes.</string>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="center" image="no_wifi_acces_screen.png" translatesAutoresizingMaskIntoConstraints="NO" id="SQo-Zy-D68">
                             <rect key="frame" x="126" y="-55" width="128" height="190"/>
-                            <animations/>
                         </imageView>
                     </subviews>
-                    <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="g1V-hV-NDn" firstAttribute="leading" secondItem="itd-dR-O8j" secondAttribute="leading" id="3DV-Oa-YPp"/>
@@ -232,7 +216,6 @@ This might take up to few minutes.</string>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eR4-21-De2" userLabel="CancelButton" customClass="PBStretchableBackgroundButton">
                     <rect key="frame" x="20" y="426" width="280" height="46"/>
-                    <animations/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <size key="titleShadowOffset" width="0.0" height="1"/>
                     <state key="normal" title="Cancel" backgroundImage="button_cancel.png">
@@ -248,7 +231,6 @@ This might take up to few minutes.</string>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxI-a1-tQk" userLabel="DoneButton" customClass="PBStretchableBackgroundButton">
                     <rect key="frame" x="20" y="427" width="280" height="46"/>
-                    <animations/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <size key="titleShadowOffset" width="0.0" height="1"/>
                     <state key="normal" title="Done" backgroundImage="button_cancel.png">
@@ -262,15 +244,13 @@ This might take up to few minutes.</string>
                         <action selector="okButtonTapped:" destination="-1" eventType="touchUpInside" id="6gh-Er-EzI"/>
                     </connections>
                 </button>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Sending Photos to Dropbox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dze-ZA-xBm">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sending Photos to Dropbox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dze-ZA-xBm">
                     <rect key="frame" x="32" y="16" width="256" height="24"/>
-                    <animations/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <animations/>
             <color key="backgroundColor" red="0.98039221759999995" green="0.95686280729999995" blue="0.92941182850000004" alpha="1" colorSpace="deviceRGB"/>
             <constraints>
                 <constraint firstItem="eR4-21-De2" firstAttribute="top" secondItem="poN-tO-5us" secondAttribute="bottom" constant="17" id="0rs-Eo-uIM"/>

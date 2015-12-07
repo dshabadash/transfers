@@ -28,7 +28,6 @@
 
 #import "PBConnectionManager.h"
 #import "PBAssetManager.h"
-#import "PBActionSheet.h"
 #import "PBConnectViewController.h"
 #import "PBNearbyDeviceListViewController.h"
 #import "PBCommonUploadToViewController.h"
@@ -59,7 +58,14 @@ static NSString * const kDidRegisterForRemoteNotificationsKey = @"didRegisterFor
 static NSTimeInterval const notificationTimeGap = 60.0;
 NSString * const PBApplicationDidBecomeActiveNotification = @"PBApplicationDidBecomeActiveNotification";
 
-@interface PBAppDelegate () <PBActionSheetDelegate, MFMailComposeViewControllerDelegate, DBRestClientDelegate> {
+typedef enum {
+    sendToNowhere = 0,
+    sendToDropbox = 1,
+    sendToFlickr = 2,
+    sendToGoogleDrive = 3
+} SendToDestination;
+
+@interface PBAppDelegate () <MFMailComposeViewControllerDelegate, DBRestClientDelegate> {
     UIBackgroundTaskIdentifier _backgroundTaskIdentifier;
     UILocalNotification *_wakeUpNotification;
     BOOL loggingToDropboxFromHelp;
@@ -299,6 +305,8 @@ NSString * const PBApplicationDidBecomeActiveNotification = @"PBApplicationDidBe
     [self showSplash:launchOptions];
     
     [[LSAppUpdateManager sharedManager] saveLastStartedAppVersion];
+    
+    [self parseString:@"Send last 10 media files"];
 
     return YES;
 }
@@ -705,21 +713,6 @@ NSString * const PBApplicationDidBecomeActiveNotification = @"PBApplicationDidBe
             return;
         }
     }
-    if (![[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-            UIUserNotificationType allowedNotificationTypes =
-            [[UIApplication sharedApplication] currentUserNotificationSettings].types;
-            
-            UIUserNotificationType notificationTypes = [self remoteNotificationsTypes];
-            if (allowedNotificationTypes & notificationTypes) {
-                UIUserNotificationSettings *mySettings =
-                [UIUserNotificationSettings settingsForTypes:notificationTypes categories:nil];
-                [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
-                [[UIApplication sharedApplication] registerForRemoteNotifications];
-                return;
-            }
-        
-    }
-
 
     // Check if permission should be asked, once
     // registerForRemoteNotificationTypes: method been called, never
@@ -766,10 +759,6 @@ NSString * const PBApplicationDidBecomeActiveNotification = @"PBApplicationDidBe
         UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge)
                                                                                                                                     categories:nil];
         [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-    }
-    else {
-        UIUserNotificationSettings *notifSettings = [UIUserNotificationSettings settingsForTypes:[self remoteNotificationsTypes] categories:nil];
-        [[UIApplication sharedApplication] registerUserNotificationSettings:notifSettings];
     }
 
 }
@@ -919,37 +908,62 @@ NSString * const PBApplicationDidBecomeActiveNotification = @"PBApplicationDidBe
     //start preparing assets ZIP while user making his or her choice where to send images to
     [[PBAssetManager sharedManager] prepareAssetsToSendWithCompletion:nil];
     
-
-    PBActionSheet *actionSheet =
-        [[PBActionSheet alloc] initWithTitle:NSLocalizedString(@"Where would you like to send photos to?", @"")
-            delegate:self];
-
-    actionSheet.userInfo = navigationController;
-    [actionSheet addButtonWithTitle:NSLocalizedString(@"Send to iPhone or iPad", @"")
-                             action:@selector(actionSheetDidSelectSendToIosDevice:)];
-
-    [actionSheet addButtonWithTitle:NSLocalizedString(@"Send to Computer", @"")
-                             action:@selector(actionSheetDidSelectSendToDesktopComputer:)];
     
-    [actionSheet addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Send to %@", @""), @"Dropbox"]
-                             action:@selector(actionSheetDidSelectSendToDropbox:)];
-    
-    [actionSheet addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Send to %@", @""), @"GoogleDrive"]
-                             action:@selector(actionSheetDidSelectSendToGoogleDrive:)];
-    
-    [actionSheet addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Send to %@", @""), @"Flickr"]
-                             action:@selector(actionSheetDidSelectSendToFlickr:)];
 
-    [actionSheet addButtonWithTitle:NSLocalizedString(@"Cancel", @"") action:nil];
+    UIAlertController *actionSheet = [UIAlertController
+                                      alertControllerWithTitle:NSLocalizedString(@"Where would you like to send photos to?", @"")
+                                      message:nil
+                                      preferredStyle:UIAlertControllerStyleActionSheet];
+    //actionSheet.userInfo = navigationController;
+    UIAlertAction *sendToIPhone = [UIAlertAction actionWithTitle:NSLocalizedString(@"Send to iPhone or iPad", @"")
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction *action) {
+                                                             [self performSelector:@selector(actionSheetDidSelectSendToIosDevice:) withObject:nil];
+                                                         }];
+    [actionSheet addAction:sendToIPhone];
 
-    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-        [PBActionSheet cancelAllActionSheets];
-        [actionSheet showFromBarButtonItem:navigationController.topViewController.navigationItem.rightBarButtonItem
-                                  animated:YES];
-    } else {
-        [actionSheet showInView:navigationController.view];
-    }
+    UIAlertAction *sendToComputer = [UIAlertAction actionWithTitle:NSLocalizedString(@"Send to Computer", @"")
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction *action) {
+                                                             [self performSelector:@selector(actionSheetDidSelectSendToDesktopComputer:) withObject:nil];
+                                                         }];
+    [actionSheet addAction:sendToComputer];
+    UIAlertAction *sendToDropbox = [UIAlertAction actionWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Send to %@", @""), @"Dropbox"]
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction *action) {
+                                                             [self performSelector:@selector(actionSheetDidSelectSendToDropbox:) withObject:nil];
+                                                         }];
+    [actionSheet addAction:sendToDropbox];
+    UIAlertAction *sendToGDrive = [UIAlertAction actionWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Send to %@", @""), @"GoogleDrive"]
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction *action) {
+                                                             [self performSelector:@selector(actionSheetDidSelectSendToGoogleDrive:) withObject:nil];
+                                                         }];
+    [actionSheet addAction:sendToGDrive];
+    UIAlertAction *sendToFlickr = [UIAlertAction actionWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Send to %@", @""), @"Flickr"]
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction *action) {
+                                                             [self performSelector:@selector(actionSheetDidSelectSendToFlickr:) withObject:nil];
+                                                         }];
+    [actionSheet addAction:sendToFlickr];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", @"")
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
+    [actionSheet addAction:cancel];
 
+
+//    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+//        [PBActionSheet cancelAllActionSheets];
+//        [actionSheet showFromBarButtonItem:navigationController.topViewController.navigationItem.rightBarButtonItem
+//                                  animated:YES];
+//    } else {
+//        [actionSheet showInView:navigationController.view];
+//    }
+//
+    [navigationController presentViewController:actionSheet animated:YES completion: nil];
+
+                             
+                             
     [actionSheet release];
 }
 
@@ -1339,10 +1353,13 @@ NSString * const PBApplicationDidBecomeActiveNotification = @"PBApplicationDidBe
 
     id navbarAppearance = [UINavigationBar appearance];
     
+    NSShadow *shadow = [NSShadow new];
+    shadow.shadowColor = [UIColor colorWithRGB:0xac4923];
     NSDictionary *titleAttributes = @{
-        NSShadowAttributeName : [UIColor colorWithRGB:0xac4923],
+        NSShadowAttributeName : shadow,
         NSForegroundColorAttributeName : [UIColor whiteColor]
     };
+                        
     [navbarAppearance setTitleTextAttributes:titleAttributes];
     [navbarAppearance setBackgroundImage:[UIImage imageNamed:@"navbar_bg"]
                           forBarPosition:UIBarPositionTopAttached
@@ -1387,6 +1404,48 @@ NSString * const PBApplicationDidBecomeActiveNotification = @"PBApplicationDidBe
 
 - (BOOL)isFullVersion {
     return YES;
+}
+
+#pragma mark - Data from Apple Watch
+
+-(NSDictionary *)numbers {
+    return @{@"one":@1, @"two":@2, @"three":@3, @"four":@4, @"five":@5, @"six":@6, @"seven":@7, @"eight":@8, @"nine":@9, @"ten":@10, @"eleven":@11, @"twelve":@12, @"thirteen":@13, @"fourteen":@14, @"fifteen":@15, @"sixteen":@16, @"seventeen":@17, @"eighteen":@28, @"nineteen":@19, @"twenty":@20, @"thirty":@30, @"forty":@40, @"fifty":@50, @"sixty":@60, @"seventy":@70, @"eighty":@80, @"ninety":@90, @"hundred":@100};
+}
+
+-(void)parseString:(NSString *)sendString {
+    NSMutableString *stringOfNumbers = [NSMutableString stringWithCapacity:sendString.length];
+    
+    NSScanner *scanner = [NSScanner scannerWithString:sendString];
+    NSCharacterSet *numbersCharacterSet = [NSCharacterSet characterSetWithCharactersInString:@"1234567890"];
+    
+    while (![scanner isAtEnd]) {
+        NSString *buf;
+        if ([scanner scanCharactersFromSet:numbersCharacterSet intoString:&buf]) {
+            [stringOfNumbers appendString:buf];
+        }
+        else {
+            [scanner setScanLocation:scanner.scanLocation+1];
+        }
+        
+    }
+    NSLog(@"stringOfNumbers: %@", stringOfNumbers);
+    
+    if ([stringOfNumbers isEqualToString:@""]) { // try to find numbers in words
+        NSArray *wordsArray = [sendString componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" ,-"]];
+    }
+    
+}
+
+-(void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply {
+    NSString *whatToSendString = [userInfo objectForKey:@"whatToSend"];
+    NSNumber *whereToSendNum = [userInfo objectForKey:@"whereToSend"];
+    
+    reply(@{@"Start sending":whatToSendString, @"Where to send:":whereToSendNum});
+    
+    //parse string and start sending
+    
+    [self parseString:whatToSendString];
+    
 }
 
 @end

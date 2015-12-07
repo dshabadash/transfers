@@ -155,7 +155,7 @@ NSString * const kRateButtonURL = @"lsapp://action.rate";
         return UIInterfaceOrientationMaskAll;
     }
     else{
-        return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskPortraitUpsideDown;
+        return (NSUInteger)UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskPortraitUpsideDown;
     }
 }
 

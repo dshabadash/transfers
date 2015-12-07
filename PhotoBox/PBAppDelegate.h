@@ -28,6 +28,8 @@ extern NSString * const PBApplicationDidBecomeActiveNotification;
 @property (nonatomic, strong) PBFlickrUploadingEngine *flickrEngine;
 @property (nonatomic, strong) PBGoogleDriveUploadingEngine *googleDriveEngine;
 
+@property (nonatomic,strong) NSDictionary *sendToCloudAppleWatchData;
+
 
 - (NSInteger)numberOfTimesApplicationBeenLaunched;
 + (PBAppDelegate *)sharedDelegate;

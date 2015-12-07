@@ -1007,10 +1007,7 @@ static char *const RDHTTPDispatchQueueActive = "RDHTTPDispatchQueueKey";
             [currentFileDataURL release];
             [currentFileData release];
             
-            //currentFileData = [[NSData alloc] initWithContentsOfMappedFile:[url path]];
-            currentFileData = [[NSData alloc] initWithContentsOfURL:url
-                                                            options:NSDataReadingMappedIfSafe
-                                                              error:nil];
+            currentFileData = [[NSData alloc] initWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:nil];
             currentFileDataURL = [url copy];
         }
         
@@ -1293,7 +1290,7 @@ static RDHTTPThread *_rdhttpThread;
     @autoreleasepool {
         self.name = @"RDHTTPConnectionThread";
         pthread_setname_np("RDHTTPConnectionThread");
-    //   [NSTimer scheduledTimerWithTimeInterval:1000000 target:nil selector:nil userInfo:nil repeats:YES];
+     //   [NSTimer scheduledTimerWithTimeInterval:1000000 target:nil selector:nil userInfo:nil repeats:YES];
         
         NSRunLoop *loop = [NSRunLoop currentRunLoop];
         BOOL hasSources = YES;

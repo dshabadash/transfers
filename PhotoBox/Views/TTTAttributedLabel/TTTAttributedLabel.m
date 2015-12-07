@@ -1168,7 +1168,7 @@ afterInheritingLabelAttributesAndConfiguringWithBlock:(NSMutableAttributedString
     }
 
     if ([coder containsValueForKey:@"verticalAlignment"]) {
-        self.verticalAlignment = (int)[coder decodeIntegerForKey:@"verticalAlignment"];
+        self.verticalAlignment = [coder decodeIntegerForKey:@"verticalAlignment"];
     }
 
     if ([coder containsValueForKey:@"truncationTokenString"]) {
