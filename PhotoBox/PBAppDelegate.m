@@ -269,7 +269,7 @@ typedef enum {
     
 
     [self logNumberOfTimesApplicationWereLaunched];
-    [[self class] setupAppearance];
+  // [[self class] setupAppearance];
     
     // Create window
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
@@ -1336,7 +1336,7 @@ typedef enum {
     [assetManager removeAllAssets];
 
     PBRootViewController *rvc = (PBRootViewController *)self.viewController;
-    [rvc presentStartCoverViewsAnimated:YES];
+   // [rvc presentStartCoverViewsAnimated:YES];
     UINavigationController *nc = (UINavigationController *)rvc.topViewController;
     [nc popToRootViewControllerAnimated:NO];
 }
@@ -1344,60 +1344,60 @@ typedef enum {
 
 #pragma mark - Appearance
 
-+ (void)setupAppearance {
-    id labelAppearance = [UILabel appearance];
-    [labelAppearance setTextColor:[UIColor colorWithRGB:0x505050]];
-    [labelAppearance setShadowColor:[UIColor colorWithWhite:1 alpha:1]];
-    [labelAppearance setShadowOffset:CGSizeMake(0, 1)];
-    [labelAppearance setBackgroundColor:[UIColor clearColor]];
-
-    id navbarAppearance = [UINavigationBar appearance];
-    
-    NSShadow *shadow = [NSShadow new];
-    shadow.shadowColor = [UIColor colorWithRGB:0xac4923];
-    NSDictionary *titleAttributes = @{
-        NSShadowAttributeName : shadow,
-        NSForegroundColorAttributeName : [UIColor whiteColor]
-    };
-                        
-    [navbarAppearance setTitleTextAttributes:titleAttributes];
-    [navbarAppearance setBackgroundImage:[UIImage imageNamed:@"navbar_bg"]
-                          forBarPosition:UIBarPositionTopAttached
-                              barMetrics:UIBarMetricsDefault];
-
-    id bbiAppearance = [UIBarButtonItem appearanceWhenContainedIn:[UINavigationController class], nil];
-    
-    NSDictionary *bbiAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                   [UIColor whiteColor],
-                                   NSForegroundColorAttributeName,
-                                   [UIColor whiteColor],
-                                   NSShadowAttributeName, nil];
-    
-    [bbiAppearance setTitleTextAttributes: bbiAttributes
-                                 forState: UIControlStateNormal];
-
-
-
-    UIImage *backImage = [[UIImage imageNamed:@"navbar_back_button_normal"] stretchableImageWithLeftCapWidth:13 topCapHeight:0];
-    [bbiAppearance setBackButtonBackgroundImage:backImage
-                                       forState:UIControlStateNormal
-                                     barMetrics:UIBarMetricsDefault];
-
-    UIImage *backPushedImage = [[UIImage imageNamed:@"navbar_back_button_pushed"] stretchableImageWithLeftCapWidth:13 topCapHeight:0];
-    [bbiAppearance setBackButtonBackgroundImage:backPushedImage
-                                       forState:UIControlStateHighlighted
-                                     barMetrics:UIBarMetricsDefault];
-
-    UIImage *normalImage = [[UIImage imageNamed:@"navbar_button_normal"] stretchableImageWithLeftCapWidth:5 topCapHeight:0];
-    [bbiAppearance setBackgroundImage:normalImage
-                             forState:UIControlStateNormal
-                           barMetrics:UIBarMetricsDefault];
-
-    UIImage *normalPushedImage = [[UIImage imageNamed:@"navbar_button_pushed"] stretchableImageWithLeftCapWidth:5 topCapHeight:0];
-    [bbiAppearance setBackgroundImage:normalPushedImage
-                             forState:UIControlStateHighlighted
-                           barMetrics:UIBarMetricsDefault];
-}
+//+ (void)setupAppearance {
+//    id labelAppearance = [UILabel appearance];
+//    [labelAppearance setTextColor:[UIColor colorWithRGB:0x505050]];
+//    [labelAppearance setShadowColor:[UIColor colorWithWhite:1 alpha:1]];
+//    [labelAppearance setShadowOffset:CGSizeMake(0, 1)];
+//    [labelAppearance setBackgroundColor:[UIColor clearColor]];
+//
+//    id navbarAppearance = [UINavigationBar appearance];
+//    
+//    NSShadow *shadow = [NSShadow new];
+//    shadow.shadowColor = [UIColor colorWithRGB:0xac4923];
+//    NSDictionary *titleAttributes = @{
+//        NSShadowAttributeName : shadow,
+//        NSForegroundColorAttributeName : [UIColor whiteColor]
+//    };
+//                        
+//    [navbarAppearance setTitleTextAttributes:titleAttributes];
+//    [navbarAppearance setBackgroundImage:[UIImage imageNamed:@"navbar_bg"]
+//                          forBarPosition:UIBarPositionTopAttached
+//                              barMetrics:UIBarMetricsDefault];
+//
+//    id bbiAppearance = [UIBarButtonItem appearanceWhenContainedIn:[UINavigationController class], nil];
+//    
+//    NSDictionary *bbiAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                   [UIColor whiteColor],
+//                                   NSForegroundColorAttributeName,
+//                                   [UIColor whiteColor],
+//                                   NSShadowAttributeName, nil];
+//    
+//    [bbiAppearance setTitleTextAttributes: bbiAttributes
+//                                 forState: UIControlStateNormal];
+//
+//
+//
+//    UIImage *backImage = [[UIImage imageNamed:@"navbar_back_button_normal"] stretchableImageWithLeftCapWidth:13 topCapHeight:0];
+//    [bbiAppearance setBackButtonBackgroundImage:backImage
+//                                       forState:UIControlStateNormal
+//                                     barMetrics:UIBarMetricsDefault];
+//
+//    UIImage *backPushedImage = [[UIImage imageNamed:@"navbar_back_button_pushed"] stretchableImageWithLeftCapWidth:13 topCapHeight:0];
+//    [bbiAppearance setBackButtonBackgroundImage:backPushedImage
+//                                       forState:UIControlStateHighlighted
+//                                     barMetrics:UIBarMetricsDefault];
+//
+//    UIImage *normalImage = [[UIImage imageNamed:@"navbar_button_normal"] stretchableImageWithLeftCapWidth:5 topCapHeight:0];
+//    [bbiAppearance setBackgroundImage:normalImage
+//                             forState:UIControlStateNormal
+//                           barMetrics:UIBarMetricsDefault];
+//
+//    UIImage *normalPushedImage = [[UIImage imageNamed:@"navbar_button_pushed"] stretchableImageWithLeftCapWidth:5 topCapHeight:0];
+//    [bbiAppearance setBackgroundImage:normalPushedImage
+//                             forState:UIControlStateHighlighted
+//                           barMetrics:UIBarMetricsDefault];
+//}
 
 
 #pragma mark - Properties

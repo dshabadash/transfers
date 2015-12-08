@@ -91,7 +91,9 @@
         [self.view insertSubview:_topViewController.view atIndex:0];
     });
     
-    [self presentStartCoverViewsAnimated:NO];
+  //  [self presentStartCoverViewsAnimated:NO];
+    
+    [self toggleViewController];
     [self registerOnNotifications];
 
     //force UI update
@@ -113,136 +115,136 @@
 
 #pragma mark - Cover Views
 
-- (void)presentStartCoverViewsAnimated:(BOOL)animated completion:(dispatch_block_t)completion {
-    [self disableGestureRecognizersInCoverView:self.topView];
-    [self disableGestureRecognizersInCoverView:self.bottomView];
-
-    CGRect bounds =  self.view.bounds;
-    CGSize size = bounds.size;
-    CGFloat width = size.width;
-    CGFloat height = size.height;
-
-    CGRect topViewFrame = CGRectMake(0, 0, width, self.view.bounds.size.height/2);//self.topView.bounds.size.height);
-    CGRect bottomViewFrame;
-
-    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-        CGFloat hh = round(height / 2);
-        topViewFrame = CGRectMake(0, 0, width, hh);
-        bottomViewFrame = CGRectMake(0, hh, width, hh);
-    }
-    else {
-        CGFloat bottomViewHeight = self.view.bounds.size.height - topViewFrame.size.height; //self.topView.bounds.size.height;
-        bottomViewFrame = CGRectMake(0, topViewFrame.size.height, width, bottomViewHeight);
-    }
-
-    
-    if (animated) {
-        CGRect initialTopViewFrame = topViewFrame;
-        initialTopViewFrame.origin.y = -initialTopViewFrame.size.height;
-        
-        CGRect initialBottomViewFrame = bottomViewFrame;
-        initialBottomViewFrame.origin.y = height;
-        
-        _topView.frame = initialTopViewFrame;
-        _bottomView.frame = initialBottomViewFrame;
-    }
-
-    if (_topView.superview != self.view) {
-        [self.view addSubview:_topView];
-    }
-
-    if (_bottomView.superview != self.view) {
-        [self.view addSubview:_bottomView];
-    }
-
-    [_topView setHidden:NO];
-    [_bottomView setHidden:NO];
-
-    if (animated) {
-        [UIView animateWithDuration:animated ? 0.3 : 0
-                         animations:^{
-                             _topView.frame = topViewFrame;
-                             _bottomView.frame = bottomViewFrame;
-                         }
-                         completion:^(BOOL finished) {
-                             [self enableGestureRecognizersInCoverView:self.topView];
-                             [self enableGestureRecognizersInCoverView:self.bottomView];
-
-                             if (completion) {
-                                 completion();
-                             }
-                         }];
-    }
-    else {
-        _topView.frame = topViewFrame;
-        _bottomView.frame = bottomViewFrame;
-
-        [self enableGestureRecognizersInCoverView:self.topView];
-        [self enableGestureRecognizersInCoverView:self.bottomView];
-
-        if (completion) {
-            completion();
-        }
-    }
-}
-
-- (void)presentStartCoverViewsAnimated:(BOOL)animated {
-    [self presentStartCoverViewsAnimated:animated completion:nil];
-}
-
-- (void)dismissStartCoverViewsAnimated {
-    [self dismissStartCoverViewsAnimated:YES];
-}
-
-- (void)dismissStartCoverViewsAnimated:(BOOL)animated {
-    [self disableGestureRecognizersInCoverView:self.topView];
-    [self disableGestureRecognizersInCoverView:self.bottomView];
-
-    CGRect bounds = self.view.bounds;
-    CGSize size = bounds.size;
-    CGFloat width = size.width;
-    CGFloat height = size.height;
-    
-    CGRect topViewFrame = CGRectMake(0, 0, width, self.topView.bounds.size.height);
-    
-    CGFloat bottomViewHeight = self.view.bounds.size.height - self.topView.bounds.size.height;
-    CGRect bottomViewFrame = CGRectMake(0, self.topView.bounds.size.height, width, bottomViewHeight);
-    
-    CGRect finalTopViewFrame = topViewFrame;
-    finalTopViewFrame.origin.y = -finalTopViewFrame.size.height;
-    
-    CGRect finalBottomViewFrame = bottomViewFrame;
-    finalBottomViewFrame.origin.y = height;
-    
-    [UIView animateWithDuration:animated ? 0.3 : 0
-                     animations:^{
-                         _topView.frame = finalTopViewFrame;
-                         _bottomView.frame = finalBottomViewFrame;
-                     }
-                     completion:^(BOOL finished) {
-                         [_topView setHidden:YES];
-                         [_bottomView setHidden:YES];
-
-                         [self enableGestureRecognizersInCoverView:self.topView];
-                         [self enableGestureRecognizersInCoverView:self.bottomView];
-                     }];
-    
-}
-
-- (void)disableGestureRecognizersInCoverView:(UIView *)coverView {
-    [coverView setUserInteractionEnabled:NO];
-    for (UIGestureRecognizer *recognizer in coverView.gestureRecognizers) {
-        recognizer.enabled = NO;
-    }
-}
-
-- (void)enableGestureRecognizersInCoverView:(UIView *)coverView {
-    [coverView setUserInteractionEnabled:YES];
-    for (UIGestureRecognizer *recognizer in coverView.gestureRecognizers) {
-        recognizer.enabled = YES;
-    }
-}
-
+//- (void)presentStartCoverViewsAnimated:(BOOL)animated completion:(dispatch_block_t)completion {
+//    [self disableGestureRecognizersInCoverView:self.topView];
+//    [self disableGestureRecognizersInCoverView:self.bottomView];
+//
+//    CGRect bounds =  self.view.bounds;
+//    CGSize size = bounds.size;
+//    CGFloat width = size.width;
+//    CGFloat height = size.height;
+//
+//    CGRect topViewFrame = CGRectMake(0, 0, width, self.view.bounds.size.height/2);//self.topView.bounds.size.height);
+//    CGRect bottomViewFrame;
+//
+//    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+//        CGFloat hh = round(height / 2);
+//        topViewFrame = CGRectMake(0, 0, width, hh);
+//        bottomViewFrame = CGRectMake(0, hh, width, hh);
+//    }
+//    else {
+//        CGFloat bottomViewHeight = self.view.bounds.size.height - topViewFrame.size.height; //self.topView.bounds.size.height;
+//        bottomViewFrame = CGRectMake(0, topViewFrame.size.height, width, bottomViewHeight);
+//    }
+//
+//    
+//    if (animated) {
+//        CGRect initialTopViewFrame = topViewFrame;
+//        initialTopViewFrame.origin.y = -initialTopViewFrame.size.height;
+//        
+//        CGRect initialBottomViewFrame = bottomViewFrame;
+//        initialBottomViewFrame.origin.y = height;
+//        
+//        _topView.frame = initialTopViewFrame;
+//        _bottomView.frame = initialBottomViewFrame;
+//    }
+//
+//    if (_topView.superview != self.view) {
+//        [self.view addSubview:_topView];
+//    }
+//
+//    if (_bottomView.superview != self.view) {
+//        [self.view addSubview:_bottomView];
+//    }
+//
+//    [_topView setHidden:NO];
+//    [_bottomView setHidden:NO];
+//
+//    if (animated) {
+//        [UIView animateWithDuration:animated ? 0.3 : 0
+//                         animations:^{
+//                             _topView.frame = topViewFrame;
+//                             _bottomView.frame = bottomViewFrame;
+//                         }
+//                         completion:^(BOOL finished) {
+//                             [self enableGestureRecognizersInCoverView:self.topView];
+//                             [self enableGestureRecognizersInCoverView:self.bottomView];
+//
+//                             if (completion) {
+//                                 completion();
+//                             }
+//                         }];
+//    }
+//    else {
+//        _topView.frame = topViewFrame;
+//        _bottomView.frame = bottomViewFrame;
+//
+//        [self enableGestureRecognizersInCoverView:self.topView];
+//        [self enableGestureRecognizersInCoverView:self.bottomView];
+//
+//        if (completion) {
+//            completion();
+//        }
+//    }
+//}
+//
+//- (void)presentStartCoverViewsAnimated:(BOOL)animated {
+//    [self presentStartCoverViewsAnimated:animated completion:nil];
+//}
+//
+//- (void)dismissStartCoverViewsAnimated {
+//    [self dismissStartCoverViewsAnimated:YES];
+//}
+//
+//- (void)dismissStartCoverViewsAnimated:(BOOL)animated {
+//    [self disableGestureRecognizersInCoverView:self.topView];
+//    [self disableGestureRecognizersInCoverView:self.bottomView];
+//
+//    CGRect bounds = self.view.bounds;
+//    CGSize size = bounds.size;
+//    CGFloat width = size.width;
+//    CGFloat height = size.height;
+//    
+//    CGRect topViewFrame = CGRectMake(0, 0, width, self.topView.bounds.size.height);
+//    
+//    CGFloat bottomViewHeight = self.view.bounds.size.height - self.topView.bounds.size.height;
+//    CGRect bottomViewFrame = CGRectMake(0, self.topView.bounds.size.height, width, bottomViewHeight);
+//    
+//    CGRect finalTopViewFrame = topViewFrame;
+//    finalTopViewFrame.origin.y = -finalTopViewFrame.size.height;
+//    
+//    CGRect finalBottomViewFrame = bottomViewFrame;
+//    finalBottomViewFrame.origin.y = height;
+//    
+//    [UIView animateWithDuration:animated ? 0.3 : 0
+//                     animations:^{
+//                         _topView.frame = finalTopViewFrame;
+//                         _bottomView.frame = finalBottomViewFrame;
+//                     }
+//                     completion:^(BOOL finished) {
+//                         [_topView setHidden:YES];
+//                         [_bottomView setHidden:YES];
+//
+//                         [self enableGestureRecognizersInCoverView:self.topView];
+//                         [self enableGestureRecognizersInCoverView:self.bottomView];
+//                     }];
+//    
+//}
+//
+//- (void)disableGestureRecognizersInCoverView:(UIView *)coverView {
+//    [coverView setUserInteractionEnabled:NO];
+//    for (UIGestureRecognizer *recognizer in coverView.gestureRecognizers) {
+//        recognizer.enabled = NO;
+//    }
+//}
+//
+//- (void)enableGestureRecognizersInCoverView:(UIView *)coverView {
+//    [coverView setUserInteractionEnabled:YES];
+//    for (UIGestureRecognizer *recognizer in coverView.gestureRecognizers) {
+//        recognizer.enabled = YES;
+//    }
+//}
+//
 
 #pragma mark - Delegate methods
 
@@ -258,14 +260,14 @@
     [self toggleViewController];
 }
 
-- (void)coverViewWillBeginDragging:(UIView *)coverView {
-    if (coverView == self.topView) {
-        [self disableGestureRecognizersInCoverView:self.bottomView];
-    }
-    else if (coverView == self.bottomView) {
-        [self disableGestureRecognizersInCoverView:self.topView];
-    }
-}
+//- (void)coverViewWillBeginDragging:(UIView *)coverView {
+//    if (coverView == self.topView) {
+//        [self disableGestureRecognizersInCoverView:self.bottomView];
+//    }
+//    else if (coverView == self.bottomView) {
+//        [self disableGestureRecognizersInCoverView:self.topView];
+//    }
+//}
 
 
 #pragma mark - Managing child view controllers
@@ -373,7 +375,7 @@
     if ([[PBAssetManager sharedManager] assetCount]) {
         [self dismissNoWifiView];
     } else {
-        [self presentStartCoverViewsAnimated:YES];
+        //[self presentStartCoverViewsAnimated:YES];
     }
 }
 

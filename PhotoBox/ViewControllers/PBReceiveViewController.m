@@ -239,7 +239,7 @@
 }
 
 - (IBAction)cancelButtonTapped:(id)sender {
-    [[PBRootViewController sharedController] presentStartCoverViewsAnimated:YES];
+   // [[PBRootViewController sharedController] presentStartCoverViewsAnimated:YES];
 }
 
 - (IBAction)helpButtonTapped:(id)sender {

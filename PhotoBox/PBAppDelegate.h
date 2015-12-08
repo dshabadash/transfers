@@ -43,7 +43,7 @@ extern NSString * const PBApplicationDidBecomeActiveNotification;
 //====
 
 + (id)rootViewController;
-+ (void)setupAppearance;
+//+ (void)setupAppearance;
 + (NSString *)serviceName;
 - (void)endBackgroundTask;
 

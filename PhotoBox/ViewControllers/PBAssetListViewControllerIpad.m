@@ -155,15 +155,15 @@
 
 #pragma mark - Actions
 
-- (void)cancel {
- //   [PBActionSheet cancelAllActionSheets];
-    [[PBRootViewController sharedController] presentStartCoverViewsAnimated:YES completion:^{
-        PBAssetManager *assetManager = [PBAssetManager sharedManager];
-        [assetManager cancelPreparingAssets];
-        [assetManager removeAllAssets];
-        [self setAssetsGroupUrl:nil];
-    }];
-}
+//- (void)cancel {
+// //   [PBActionSheet cancelAllActionSheets];
+//    [[PBRootViewController sharedController] presentStartCoverViewsAnimated:YES completion:^{
+//        PBAssetManager *assetManager = [PBAssetManager sharedManager];
+//        [assetManager cancelPreparingAssets];
+//        [assetManager removeAllAssets];
+//        [self setAssetsGroupUrl:nil];
+//    }];
+//}
 
 - (void)albumsButtonTapped:(id)sender {
   //  [PBActionSheet cancelAllActionSheets];
