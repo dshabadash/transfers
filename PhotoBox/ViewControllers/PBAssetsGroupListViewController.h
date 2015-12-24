@@ -27,7 +27,7 @@ extern NSString * const PBAssetsGroupListViewControllerDidSelectAlbumNotificatio
 - (void)presentAssetListViewControllerAssetGroup:(ALAssetsGroup *)assetsGroup;
 + (UITableView *)albumsTableViewWithFrame:(CGRect)frame;
 + (UIBarButtonItem *)sendBarButtonItemTarget:(id)target action:(SEL)action;
-+ (UIBarButtonItem *)cancelBarButtonItemTarget:(id)target action:(SEL)action;
+//+ (UIBarButtonItem *)cancelBarButtonItemTarget:(id)target action:(SEL)action;
 - (void)registerOnNotifications;
 
 @end

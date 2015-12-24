@@ -83,16 +83,16 @@ NSString * const PBAssetsGroupListViewControllerDidSelectAlbumNotification = @"P
     return sendButton;
 }
 
-+ (UIBarButtonItem *)cancelBarButtonItemTarget:(id)target action:(SEL)action {
-    UIBarButtonItem *cancelButton =
-        [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", @"")
-            style:UIBarButtonSystemItemCancel//initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-            target:target
-            action:action]
-        autorelease];
-
-    return cancelButton;
-}
+//+ (UIBarButtonItem *)cancelBarButtonItemTarget:(id)target action:(SEL)action {
+//    UIBarButtonItem *cancelButton =
+//        [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", @"")
+//            style:UIBarButtonSystemItemCancel//initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+//            target:target
+//            action:action]
+//        autorelease];
+//
+//    return cancelButton;
+//}
 
 
 #pragma mark - View
@@ -106,9 +106,9 @@ NSString * const PBAssetsGroupListViewControllerDidSelectAlbumNotification = @"P
             [[self class] sendBarButtonItemTarget:self
                                            action:@selector(sendButtonTapped:)];
 
-        self.navigationItem.leftBarButtonItem =
-            [[self class] cancelBarButtonItemTarget:self
-                                             action:@selector(cancel)];
+        self.navigationItem.leftBarButtonItem = nil;
+//            [[self class] cancelBarButtonItemTarget:self
+//                                             action:@selector(cancel)];
     }
     
     _tableView = [[self class] albumsTableViewWithFrame:self.view.frame];
@@ -159,13 +159,14 @@ NSString * const PBAssetsGroupListViewControllerDidSelectAlbumNotification = @"P
     [[PBAppDelegate sharedDelegate] presentConnectViewControllerInNavigationController:self.navigationController];
 }
 
-- (void)cancel {
+//- (void)cancel {
     //[[PBRootViewController sharedController] presentStartCoverViewsAnimated:YES];
 
-    PBAssetManager *assetManager = [PBAssetManager sharedManager];
-    [assetManager cancelPreparingAssets];
-    [assetManager removeAllAssets];
-}
+//    PBAssetManager *assetManager = [PBAssetManager sharedManager];
+//    [assetManager cancelPreparingAssets];
+//    [assetManager removeAllAssets];
+//
+//}
 
 
 #pragma mark - Assets

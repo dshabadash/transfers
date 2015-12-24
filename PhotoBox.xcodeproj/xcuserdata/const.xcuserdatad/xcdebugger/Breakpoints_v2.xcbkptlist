@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PhotoBox/ViewControllers/PBAssetsGroupListViewController.m"
-            timestampString = "435676362.104527"
+            timestampString = "472691288.531394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
             landmarkName = "-sendDidSelectAssetsAlbumNotificationAssetGroup:"
             landmarkType = "5">
          </BreakpointContent>
@@ -985,12 +985,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PhotoBox/ViewControllers/PBAssetsGroupListViewController.m"
-            timestampString = "472690890.761014"
+            filePath = "PhotoBox/ViewControllers/PBAssetListViewControllerIpad.m"
+            timestampString = "472690917.626383"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "-cancel"
             landmarkType = "5">
          </BreakpointContent>
@@ -1001,13 +1001,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PhotoBox/ViewControllers/PBAssetListViewControllerIpad.m"
-            timestampString = "472690917.626383"
+            filePath = "PhotoBox/ViewControllers/PBAssetsGroupListViewController.m"
+            timestampString = "472691065.420184"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "-cancel"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "-initWithNibName:bundle:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
