@@ -157,12 +157,12 @@
 
 - (void)cancel {
  //   [PBActionSheet cancelAllActionSheets];
-    [[PBRootViewController sharedController] presentStartCoverViewsAnimated:YES completion:^{
+ //   [[PBRootViewController sharedController] presentStartCoverViewsAnimated:YES completion:^{
         PBAssetManager *assetManager = [PBAssetManager sharedManager];
         [assetManager cancelPreparingAssets];
         [assetManager removeAllAssets];
         [self setAssetsGroupUrl:nil];
-    }];
+   // }];
 }
 
 - (void)albumsButtonTapped:(id)sender {

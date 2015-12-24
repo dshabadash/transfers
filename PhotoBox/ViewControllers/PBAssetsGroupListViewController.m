@@ -160,7 +160,7 @@ NSString * const PBAssetsGroupListViewControllerDidSelectAlbumNotification = @"P
 }
 
 - (void)cancel {
-    [[PBRootViewController sharedController] presentStartCoverViewsAnimated:YES];
+    //[[PBRootViewController sharedController] presentStartCoverViewsAnimated:YES];
 
     PBAssetManager *assetManager = [PBAssetManager sharedManager];
     [assetManager cancelPreparingAssets];

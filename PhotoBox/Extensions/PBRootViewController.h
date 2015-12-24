@@ -17,9 +17,9 @@
 + (id)sharedController;
 - (void)toggleViewController;
 - (void)setTopViewControllerActive:(BOOL)active animated:(BOOL)animated;
-- (void)presentStartCoverViewsAnimated:(BOOL)animated completion:(dispatch_block_t)completion;
-- (void)presentStartCoverViewsAnimated:(BOOL)animated;
-- (void)dismissStartCoverViewsAnimated;
+//- (void)presentStartCoverViewsAnimated:(BOOL)animated completion:(dispatch_block_t)completion;
+//- (void)presentStartCoverViewsAnimated:(BOOL)animated;
+//- (void)dismissStartCoverViewsAnimated;
 - (void)presentMultiselectionTipView;
 - (void)presentHelpViewController;
 - (void)presentHelpViewController:(UIViewController *)helpViewController animated:(BOOL)animated;
@@ -27,6 +27,6 @@
 - (void)dismissImportFailedViewController;
 - (void)topViewSelected;
 - (void)bottomViewSelected;
-- (void)coverViewWillBeginDragging:(UIView *)coverView;
+//- (void)coverViewWillBeginDragging:(UIView *)coverView;
 
 @end

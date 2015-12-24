@@ -269,7 +269,7 @@ typedef enum {
     
 
     [self logNumberOfTimesApplicationWereLaunched];
-    [[self class] setupAppearance];
+  //  [[self class] setupAppearance];
     
     // Create window
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
@@ -1336,7 +1336,7 @@ typedef enum {
     [assetManager removeAllAssets];
 
     PBRootViewController *rvc = (PBRootViewController *)self.viewController;
-    [rvc presentStartCoverViewsAnimated:YES];
+  //  [rvc presentStartCoverViewsAnimated:YES];
     UINavigationController *nc = (UINavigationController *)rvc.topViewController;
     [nc popToRootViewControllerAnimated:NO];
 }
